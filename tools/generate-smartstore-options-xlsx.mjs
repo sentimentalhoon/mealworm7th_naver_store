@@ -7,106 +7,46 @@ const outputPath = path.join(outputDir, "mealworm7th_smartstore_options.xlsx");
 let crcTable;
 
 const sizes = ["소", "중", "대"];
-const counts = ["500마리", "1000마리", "2000마리", "3000마리", "5000마리"];
+const liveAmounts = ["500마리", "1000마리", "2000마리", "3000마리", "5000마리", "1kg"];
+const dryWeights = ["0.5kg", "1kg"];
 
 const rows = [
-  ...sizes.map((size) => ({
-    category: "밀웜",
-    detail: `생밀웜 1kg / ${size}`,
-    code: `MW-LIVE-1KG-${romanizeSize(size)}`,
-    memo: "1kg 중량 기준, 크기 선택"
+  ...["밀웜", "슈퍼밀웜"].flatMap((category) => (
+    sizes.flatMap((size) => liveAmounts.map((amount) => ({
+      choice1: category,
+      choice2: size,
+      choice3: amount,
+      code: `${category === "밀웜" ? "MW" : "SW"}-${romanizeSize(size)}-${romanizeAmount(amount)}`
+    })))
+  )),
+  ...dryWeights.map((weight) => ({
+    choice1: "건조밀웜",
+    choice2: weight,
+    choice3: "",
+    code: `DMW-${romanizeAmount(weight)}`
   })),
-  ...sizes.flatMap((size) => counts.map((count) => ({
-    category: "슈퍼밀웜",
-    detail: `마리수형 / ${size} / ${count}`,
-    code: `SW-COUNT-${romanizeSize(size)}-${count.replace("마리", "")}`,
-    memo: "마리수형, 크기/수량 선택"
-  }))),
-  ...sizes.map((size) => ({
-    category: "슈퍼밀웜",
-    detail: `슈퍼밀웜 1kg / ${size}`,
-    code: `SW-LIVE-1KG-${romanizeSize(size)}`,
-    memo: "1kg 중량 기준, 크기 선택"
-  })),
-  ...["0.5kg", "1.0kg"].map((weight) => ({
-    category: "건조 밀웜",
-    detail: `건조밀웜 / ${weight}`,
-    code: `MW-DRIED-${weight.replace(".", "_").replace("kg", "KG")}`,
-    memo: "건조 상품, 중량 선택"
-  })),
-  ...["0.5kg", "1.0kg"].map((weight) => ({
-    category: "건조슈퍼밀웜",
-    detail: `건조슈퍼밀웜 / ${weight}`,
-    code: `SW-DRIED-${weight.replace(".", "_").replace("kg", "KG")}`,
-    memo: "건조 상품, 중량 선택"
+  ...dryWeights.map((weight) => ({
+    choice1: "건조슈퍼밀웜",
+    choice2: weight,
+    choice3: "",
+    code: `DSW-${romanizeAmount(weight)}`
   }))
 ];
 
-const validKeys = new Set(rows.map((row) => `${row.category}|||${row.detail}`));
-const categories = ["밀웜", "슈퍼밀웜", "건조 밀웜", "건조슈퍼밀웜"];
-const details = rows.map((row) => row.detail);
-const allCombinationRows = categories.flatMap((category) => details.map((detail) => {
-  const isValid = validKeys.has(`${category}|||${detail}`);
-  return {
-    category,
-    detail,
-    status: isValid ? "판매 가능" : "사용여부 N / 미노출",
-    memo: isValid ? "정상 조합" : "카테고리와 세부 선택 불일치"
-  };
-}));
-
 const workbook = createWorkbook([
   {
-    name: "네이버_조합옵션",
+    name: "옵션목록",
     rows: [
-      ["옵션명1", "옵션값1", "옵션명2", "옵션값2", "옵션가", "재고수량", "사용여부", "판매자관리코드", "관리메모"],
+      ["선택1", "선택2", "선택3", "옵션가", "재고수량", "관리코드", "사용여부"],
       ...rows.map((row) => [
-        "상품 카테고리",
-        row.category,
-        "세부 선택",
-        row.detail,
+        row.choice1,
+        row.choice2,
+        row.choice3,
         "",
         "",
-        "Y",
         row.code,
-        row.memo
+        "Y"
       ])
-    ]
-  },
-  {
-    name: "가격재고_입력표",
-    rows: [
-      ["상품 카테고리", "세부 선택", "실제 판매가", "기준 판매가", "옵션가", "재고수량", "판매상태", "사용여부", "판매자관리코드", "메모"],
-      ...rows.map((row) => [
-        row.category,
-        row.detail,
-        "",
-        "",
-        "",
-        "",
-        "판매중",
-        "Y",
-        row.code,
-        row.memo
-      ])
-    ]
-  },
-  {
-    name: "전체조합_점검",
-    rows: [
-      ["상품 카테고리", "세부 선택", "처리", "메모"],
-      ...allCombinationRows.map((row) => [row.category, row.detail, row.status, row.memo])
-    ]
-  },
-  {
-    name: "사용안내",
-    rows: [
-      ["항목", "내용"],
-      ["목적", "밀웜7번가 네이버 스마트스토어 조합형 옵션 입력용 원본표"],
-      ["업로드 전 확인", "판매자센터에서 엑셀양식 다운(조합)을 받은 뒤, 이 파일의 네이버_조합옵션 시트를 양식에 맞게 붙여넣어 사용하세요."],
-      ["가격/재고", "옵션가와 재고수량은 가격표 확정 후 입력하세요. 정상 판매중이며 옵션가 0원인 옵션이 하나 이상 필요합니다."],
-      ["조합 정리", "전체조합_점검 시트에서 사용여부 N / 미노출 조합은 고객 화면에 노출되지 않도록 관리하세요."],
-      ["주의", "네이버 양식이 변경될 수 있으므로 최종 업로드 파일은 판매자센터에서 받은 최신 양식을 기준으로 저장하세요."]
     ]
   }
 ]);
@@ -116,10 +56,16 @@ await writeFile(outputPath, workbook);
 
 console.log(`Generated ${path.relative(rootDir, outputPath)}`);
 console.log(`Option rows: ${rows.length}`);
-console.log(`Combination check rows: ${allCombinationRows.length}`);
 
 function romanizeSize(size) {
   return ({ "소": "S", "중": "M", "대": "L" })[size] || size;
+}
+
+function romanizeAmount(amount) {
+  return amount
+    .replace("마리", "")
+    .replace(".", "_")
+    .replace("kg", "KG");
 }
 
 function createWorkbook(sheets) {
@@ -197,7 +143,7 @@ function stylesXml() {
 function worksheetXml(rows) {
   const maxColumns = Math.max(...rows.map((row) => row.length));
   const columnXml = Array.from({ length: maxColumns }, (_, index) => (
-    `<col min="${index + 1}" max="${index + 1}" width="${index < 4 ? 24 : 16}" customWidth="1"/>`
+    `<col min="${index + 1}" max="${index + 1}" width="${index < 3 ? 16 : 14}" customWidth="1"/>`
   )).join("");
 
   const rowXml = rows.map((row, rowIndex) => {
