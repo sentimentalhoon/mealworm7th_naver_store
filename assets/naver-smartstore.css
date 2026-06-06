@@ -28,16 +28,14 @@ body{
   overflow:hidden;
 }
 img{max-width:100%;display:block}
-strong{font-weight:900;color:var(--brown)}
-strong.key,
-strong.good,
-strong.warn{
+.mark{
+  font-weight:inherit;
   border-radius:6px;
   padding:0 .15em;
 }
-strong.key{background:#fff0dd;color:var(--brown)}
-strong.good{background:#eef6ea;color:var(--green)}
-strong.warn{background:#fff0e8;color:var(--red)}
+.mark.key{background:#fff0dd;color:var(--brown)}
+.mark.good{background:#eef6ea;color:var(--green)}
+.mark.warn{background:#fff0e8;color:var(--red)}
 .hero{
   position:relative;
   min-height:420px;
@@ -88,7 +86,7 @@ strong.warn{background:#fff0e8;color:var(--red)}
 .product-card h3{font-size:25px;line-height:1.28;margin:0 0 9px;color:var(--brown);letter-spacing:-.04em}
 .product-card p{margin:0 0 13px;color:#6d5749;line-height:1.75;font-size:15px}
 .specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
-.spec{background:#fff8f1;border:1px solid var(--line);border-radius:14px;padding:12px;font-size:14px;line-height:1.55;color:var(--brown2);font-weight:800}
+.spec{background:#fff8f1;border:1px solid var(--line);border-radius:14px;padding:12px;font-size:14px;line-height:1.55;color:var(--brown2)}
 .spec b{display:block;color:var(--brown);margin-bottom:5px}
 .table-wrap{width:100%;overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:#fff}
 table{min-width:760px;width:100%;border-collapse:collapse}
@@ -96,7 +94,7 @@ th,td{border-bottom:1px solid var(--line);padding:13px 10px;text-align:center;ve
 th{background:var(--brown);color:#fff;font-weight:900}
 tr:last-child td{border-bottom:none}
 td:first-child{font-weight:900;color:var(--brown);background:#fff8f1}
-td:not(:first-child){font-weight:750;color:#493629}
+td:not(:first-child){color:#493629}
 .tag{display:inline-block;background:#f3eadf;border:1px solid #e3cdb7;color:#57351e;border-radius:999px;padding:5px 8px;margin:2px;font-weight:800;font-size:12px}
 .note{
   display:flex;
@@ -111,7 +109,7 @@ td:not(:first-child){font-weight:750;color:#493629}
   line-height:1.65;
   font-size:14px;
 }
-.note strong{color:var(--brown)}
+.note .mark{color:var(--brown)}
 .split{display:grid;gap:20px;align-items:center}
 .image-box{border-radius:20px;overflow:hidden;background:#eee;box-shadow:0 12px 26px rgba(80,45,18,.10)}
 .image-box img{width:100%;height:auto}
@@ -120,7 +118,6 @@ td:not(:first-child){font-weight:750;color:#493629}
 .lead p{color:#6d5749;font-size:15.5px;line-height:1.82;margin:0 0 14px}
 .check-list{display:grid;gap:10px}
 .check{position:relative;padding-left:30px;font-size:14.5px;line-height:1.7;color:#493629}
-.check strong{font-weight:900}
 .check:before{
   content:"✓";
   position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;
@@ -147,7 +144,7 @@ td:not(:first-child){font-weight:750;color:#493629}
 .bang{width:54px;height:54px;border-radius:50%;background:var(--brown);color:#fff;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:900}
 .warning h3{margin:0 0 10px;color:var(--brown);font-size:23px}
 .warning ul{margin:0;padding-left:18px;color:#5d4638;line-height:1.75;font-size:14px}
-.warning strong{color:var(--red)}
+.warning .mark{color:var(--red)}
 .only-mobile{display:none}
 @media (min-width:720px){
   .hero{min-height:460px;padding:54px 40px 42px}
@@ -199,9 +196,8 @@ td:not(:first-child){font-weight:750;color:#493629}
 .superworm-season-notice li{
   margin:4px 0;
 }
-.superworm-season-notice b{
+.superworm-season-notice .mark{
   color:var(--red);
-  font-weight:900;
 }
 .superworm-season-notice .soft{
   color:#7a6253;
@@ -293,7 +289,7 @@ body.image-export .compare-cards.image-export-only{
   line-height:1.55;
 }
 .compare-card b{color:var(--brown)}
-.compare-card span{color:var(--brown2);font-weight:800}
+.compare-card span{color:var(--brown2)}
 body.image-export .superworm-season-notice{
   margin-top:0;
   font-size:16px;
