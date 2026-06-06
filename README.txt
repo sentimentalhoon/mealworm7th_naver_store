@@ -1,4 +1,4 @@
-밀웜 상세페이지 HTML 세트 v15
+밀웜 상세페이지 HTML 세트 v16
 
 핵심 변경사항
 1. 네이버 스마트스토어 상세페이지용으로 840px / 640px / 400px 폭 프리셋 적용
@@ -82,21 +82,35 @@ v15 변경사항
 - 네이버 공식 도움말 확인 링크를 옵션, 옵션가, 이미지, 발송기한, 반품 귀책, 취급불가상품 항목까지 확장했습니다.
 - 생물 상품 상세페이지의 교환/환불 문구를 구매자 귀책 상황 중심으로 더 명확하게 정리했습니다.
 
+v16 변경사항
+- 전체 HTML 상세페이지를 네이버 업로드용 PNG로 export하는 명령을 추가했습니다.
+- 통합페이지는 기존처럼 data-export-name 기준 섹션 이미지로 생성하고, 개별 상품/매뉴얼 페이지는 화면 섹션 단위로 생성합니다.
+- npm run export:images는 전체 페이지를 생성하고, npm run export:integrated는 통합 상세페이지 이미지만 생성합니다.
+
 이미지 업로드용 PNG 생성 방법
 1. 최초 1회 의존성 설치
    npm install
    npm exec playwright install chromium
 
-2. 통합 상세페이지 이미지 생성
+2. 전체 상세페이지 이미지 생성
+   npm run export:images
+
+   통합 상세페이지 이미지만 다시 생성할 때는 아래 명령을 사용하세요.
    npm run export:integrated
 
 3. 생성 위치
    exports/00_integrated_naver_mobile/840px/
    exports/00_integrated_naver_mobile/640px/
    exports/00_integrated_naver_mobile/400px/
+   exports/01_live_mealworm_1kg/
+   exports/02_live_superworm_count/
+   exports/03_live_superworm_1kg/
+   exports/04_dried_mealworm/
+   exports/05_dried_superworm/
+   exports/06_naver_option_manual/
 
 4. 업로드 방식
-   사용할 폭의 폴더에서 01_01_hero.png부터 16_16_before_purchase.png까지 파일명 순서대로 네이버 스마트스토어 상세설명 이미지에 업로드하세요.
+   사용할 폭의 폴더에서 PNG 파일을 파일명 순서대로 네이버 스마트스토어 상세설명 이미지에 업로드하세요.
    manifest.json은 생성 결과 확인용 파일이며 업로드하지 않아도 됩니다.
 
 주의
