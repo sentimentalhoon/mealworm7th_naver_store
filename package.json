@@ -1,0 +1,11 @@
+{
+  "name": "mealworm7th-naver-store",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "export:integrated": "node tools/export-smartstore-images.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.60.0"
+  }
+}

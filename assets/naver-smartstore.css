@@ -218,3 +218,106 @@ td:first-child{font-weight:900;color:var(--brown);background:#fff8f1}
   color:#7a6253;
   font-size:12.5px;
 }
+
+
+/* 네이버 상세 이미지 캡처용 모드 */
+.image-export-only{display:none}
+body.image-export{
+  background:#fff;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:geometricPrecision;
+}
+body.image-export .page{max-width:430px}
+body.image-export .nav{display:none}
+body.image-export .image-export-hide{display:none}
+body.image-export .image-export-only{display:block}
+body.image-export .hero{
+  min-height:0;
+  padding:40px 18px 34px;
+}
+body.image-export .brand{font-size:14px}
+body.image-export .badge{font-size:15px;line-height:1.35}
+body.image-export .hero h1{font-size:38px;letter-spacing:0}
+body.image-export .hero .sub{font-size:19px}
+body.image-export .hero .desc{font-size:17px;line-height:1.75}
+body.image-export .chip{font-size:15px;line-height:1.35}
+body.image-export .section{
+  padding:40px 18px;
+  border-bottom:0;
+}
+body.image-export .title{margin-bottom:24px}
+body.image-export .eyebrow{font-size:13px}
+body.image-export .title h2{
+  font-size:28px;
+  letter-spacing:0;
+}
+body.image-export .title p,
+body.image-export .guide-card p,
+body.image-export .product-card p,
+body.image-export .lead p,
+body.image-export .step p,
+body.image-export .qa p,
+body.image-export .note,
+body.image-export .check,
+body.image-export .warning ul{
+  font-size:16px;
+  line-height:1.72;
+}
+body.image-export .caption{
+  font-size:15px;
+  line-height:1.65;
+}
+body.image-export .guide-grid,
+body.image-export .specs,
+body.image-export .process,
+body.image-export .faq{
+  grid-template-columns:1fr;
+}
+body.image-export .guide-card h3{font-size:20px}
+body.image-export .product-card h3{font-size:26px;letter-spacing:0}
+body.image-export .spec{
+  font-size:16px;
+  line-height:1.55;
+}
+body.image-export .table-wrap{display:none}
+body.image-export .compare-cards.image-export-only{
+  display:grid;
+  gap:12px;
+}
+.compare-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:16px;
+  box-shadow:0 8px 20px rgba(84,45,18,.045);
+}
+.compare-card h3{
+  margin:0 0 12px;
+  color:var(--brown);
+  font-size:22px;
+  line-height:1.3;
+}
+.compare-card div{
+  display:grid;
+  grid-template-columns:92px 1fr;
+  gap:10px;
+  padding:9px 0;
+  border-top:1px solid #f0e3d6;
+  font-size:16px;
+  line-height:1.55;
+}
+.compare-card b{color:var(--brown)}
+.compare-card span{color:#5f493a}
+body.image-export .superworm-season-notice{
+  margin-top:0;
+  font-size:16px;
+  line-height:1.75;
+}
+body.image-export .superworm-season-notice h4{
+  font-size:20px;
+  letter-spacing:0;
+}
+body.image-export .superworm-season-notice .soft{
+  font-size:15px;
+  line-height:1.65;
+}
