@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "node tools/build-site.mjs",
+    "export:options": "node tools/generate-smartstore-options-xlsx.mjs",
     "export:images": "node tools/export-smartstore-images.mjs",
     "export:integrated": "node tools/export-smartstore-images.mjs --page=00_integrated_naver_mobile"
   },
