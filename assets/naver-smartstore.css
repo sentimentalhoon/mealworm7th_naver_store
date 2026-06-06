@@ -1,6 +1,6 @@
 
 :root{
-  --page:860px;
+  --page:840px;
   --brown:#4f2d16;
   --brown2:#6b4328;
   --cream:#fff7ef;
@@ -11,6 +11,9 @@
   --muted:#766052;
   --red:#a6502a;
 }
+html[data-page-width="840"]{--page:840px}
+html[data-page-width="640"]{--page:640px}
+html[data-page-width="400"]{--page:400px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -146,6 +149,62 @@ td:not(:first-child){color:#493629}
 .warning ul{margin:0;padding-left:18px;color:#5d4638;line-height:1.75;font-size:14px}
 .warning .mark{color:var(--red)}
 .only-mobile{display:none}
+html[data-page-width="640"] .hero{
+  min-height:410px;
+  padding:44px 30px 34px;
+}
+html[data-page-width="640"] .hero h1{font-size:44px}
+html[data-page-width="640"] .hero .sub{font-size:19px}
+html[data-page-width="640"] .section{padding:44px 28px}
+html[data-page-width="640"] .split{grid-template-columns:1fr}
+html[data-page-width="640"] .product-card{
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:16px;
+  align-items:center;
+}
+html[data-page-width="640"] .product-card .photo{margin-bottom:0}
+html[data-page-width="640"] .product-card .photo img{height:210px}
+html[data-page-width="640"] .table-wrap{display:none}
+html[data-page-width="640"] .compare-cards.image-export-only{
+  display:grid;
+  gap:12px;
+}
+html[data-page-width="400"] .hero{
+  min-height:360px;
+  padding:32px 16px 28px;
+}
+html[data-page-width="400"] .hero h1{font-size:34px}
+html[data-page-width="400"] .hero .sub{font-size:17px}
+html[data-page-width="400"] .hero .desc{font-size:15px}
+html[data-page-width="400"] .section{padding:34px 14px}
+html[data-page-width="400"] .title h2{font-size:25px}
+html[data-page-width="400"] .guide-grid,
+html[data-page-width="400"] .specs,
+html[data-page-width="400"] .process,
+html[data-page-width="400"] .season,
+html[data-page-width="400"] .faq,
+html[data-page-width="400"] .split{
+  grid-template-columns:1fr;
+}
+html[data-page-width="400"] .product-card{
+  display:block;
+  padding:14px;
+}
+html[data-page-width="400"] .product-card .photo{margin-bottom:14px}
+html[data-page-width="400"] .product-card .photo img{height:210px}
+html[data-page-width="400"] .warning{grid-template-columns:1fr}
+html[data-page-width="400"] .table-wrap{display:none}
+html[data-page-width="400"] .compare-cards.image-export-only{
+  display:grid;
+  gap:12px;
+}
+html[data-page-width="400"] .compare-card{padding:14px}
+html[data-page-width="400"] .compare-card div{
+  grid-template-columns:82px 1fr;
+  gap:8px;
+  font-size:15px;
+}
 @media (min-width:720px){
   .hero{min-height:460px;padding:54px 40px 42px}
   .hero::before{background:linear-gradient(90deg,rgba(255,248,240,.98),rgba(255,248,240,.94) 48%,rgba(255,248,240,.76)), var(--hero) var(--hero-position, center right)/cover no-repeat}
@@ -212,7 +271,7 @@ body.image-export{
   -webkit-font-smoothing:antialiased;
   text-rendering:geometricPrecision;
 }
-body.image-export .page{max-width:430px}
+body.image-export .page{max-width:var(--page)}
 body.image-export .image-export-hide{display:none}
 body.image-export .image-export-only{display:block}
 body.image-export .hero{
