@@ -22,13 +22,13 @@ const rows = [
   ...dryWeights.map((weight) => ({
     choice1: "건조밀웜",
     choice2: weight,
-    choice3: "",
+    choice3: "단일",
     code: `DMW-${romanizeAmount(weight)}`
   })),
   ...dryWeights.map((weight) => ({
     choice1: "건조슈퍼밀웜",
     choice2: weight,
-    choice3: "",
+    choice3: "단일",
     code: `DSW-${romanizeAmount(weight)}`
   }))
 ];
