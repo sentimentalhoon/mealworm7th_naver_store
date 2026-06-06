@@ -39,46 +39,20 @@ img{max-width:100%;display:block}
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(180deg,rgba(255,248,240,.96) 0%,rgba(255,248,240,.83) 45%,rgba(255,248,240,.18) 100%), var(--hero) center/cover no-repeat;
+  background:linear-gradient(180deg,rgba(255,248,240,.98) 0%,rgba(255,248,240,.94) 55%,rgba(255,248,240,.78) 100%), var(--hero) var(--hero-position, center)/cover no-repeat;
   z-index:0;
 }
+.hero.text-only::before{background:linear-gradient(180deg,#fff7ef 0%,#fffaf5 100%)}
 .hero>*{position:relative;z-index:1}
-.brand{font-size:13px;font-weight:900;letter-spacing:.14em;color:var(--brown2);margin-bottom:18px}
 .badge{display:inline-block;background:var(--brown);color:#fff;border-radius:999px;padding:8px 12px;font-weight:900;font-size:13px;margin-bottom:14px}
 .hero h1{font-size:42px;line-height:1.08;margin:0 0 12px;color:var(--brown);letter-spacing:-.045em}
 .hero .sub{font-size:19px;line-height:1.55;margin:0 0 14px;color:#513523;font-weight:900}
 .hero .desc{font-size:15.5px;line-height:1.85;max-width:660px;color:#654d3f;margin:0 0 18px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{background:rgba(79,45,22,.92);color:#fff;border-radius:999px;padding:8px 11px;font-weight:800;font-size:13px}
-.nav{
-  position:sticky;
-  top:0;
-  z-index:50;
-  display:flex;
-  gap:7px;
-  flex-wrap:nowrap;
-  overflow-x:auto;
-  padding:11px 14px;
-  background:rgba(255,255,255,.96);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  -webkit-overflow-scrolling:touch;
-}
-.nav a{
-  flex:0 0 auto;
-  text-decoration:none;
-  color:var(--brown);
-  background:var(--cream);
-  border:1px solid var(--line);
-  border-radius:999px;
-  padding:8px 11px;
-  font-weight:900;
-  font-size:13px;
-}
 .section{padding:42px 24px;border-bottom:1px solid #f0e3d6}
 .section.alt{background:var(--cream2)}
 .title{text-align:center;margin-bottom:25px}
-.eyebrow{display:inline-block;color:var(--green);font-weight:900;font-size:12px;letter-spacing:.1em;margin-bottom:8px}
 .title h2{font-size:29px;line-height:1.25;margin:0;color:var(--brown);letter-spacing:-.045em}
 .title p{max-width:700px;margin:12px auto 0;color:var(--muted);font-size:15px;line-height:1.8}
 .guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
@@ -161,13 +135,11 @@ td:first-child{font-weight:900;color:var(--brown);background:#fff8f1}
 .bang{width:54px;height:54px;border-radius:50%;background:var(--brown);color:#fff;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:900}
 .warning h3{margin:0 0 10px;color:var(--brown);font-size:23px}
 .warning ul{margin:0;padding-left:18px;color:#5d4638;line-height:1.75;font-size:14px}
-.footer{text-align:center;padding:34px 22px;background:var(--brown);color:#fff}
-.footer b{font-size:19px;letter-spacing:.12em}
-.footer p{margin:10px 0 0;color:#ead8c5;font-size:14px;line-height:1.6}
 .only-mobile{display:none}
 @media (min-width:720px){
   .hero{min-height:460px;padding:54px 40px 42px}
-  .hero::before{background:linear-gradient(90deg,rgba(255,248,240,.96),rgba(255,248,240,.82) 45%,rgba(255,248,240,.22)), var(--hero) center right/cover no-repeat}
+  .hero::before{background:linear-gradient(90deg,rgba(255,248,240,.98),rgba(255,248,240,.94) 48%,rgba(255,248,240,.76)), var(--hero) var(--hero-position, center right)/cover no-repeat}
+  .hero.text-only::before{background:linear-gradient(90deg,#fff7ef 0%,#fffaf5 100%)}
   .hero h1{font-size:50px}
   .hero .sub{font-size:21px}
   .section{padding:52px 38px}
@@ -228,14 +200,12 @@ body.image-export{
   text-rendering:geometricPrecision;
 }
 body.image-export .page{max-width:430px}
-body.image-export .nav{display:none}
 body.image-export .image-export-hide{display:none}
 body.image-export .image-export-only{display:block}
 body.image-export .hero{
   min-height:0;
   padding:40px 18px 34px;
 }
-body.image-export .brand{font-size:14px}
 body.image-export .badge{font-size:15px;line-height:1.35}
 body.image-export .hero h1{font-size:38px;letter-spacing:0}
 body.image-export .hero .sub{font-size:19px}
@@ -246,7 +216,6 @@ body.image-export .section{
   border-bottom:0;
 }
 body.image-export .title{margin-bottom:24px}
-body.image-export .eyebrow{font-size:13px}
 body.image-export .title h2{
   font-size:28px;
   letter-spacing:0;

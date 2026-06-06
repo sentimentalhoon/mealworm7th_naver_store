@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readdir, rm, writeFile } from "node:fs/promises";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
@@ -25,6 +25,10 @@ function safeName(value) {
 }
 
 await mkdir(outputDir, { recursive: true });
+const existingFiles = await readdir(outputDir);
+await Promise.all(existingFiles
+  .filter((file) => file.endsWith(".png") || file === "manifest.json")
+  .map((file) => rm(path.join(outputDir, file))));
 
 const browser = await chromium.launch();
 const page = await browser.newPage({
