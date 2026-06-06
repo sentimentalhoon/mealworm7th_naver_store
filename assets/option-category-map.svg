@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">네이버 스마트스토어 옵션 카테고리 구조</title>
+  <desc id="desc">상품 카테고리 네 가지 아래 세부 선택 옵션을 배치하는 구조도</desc>
+  <rect width="1200" height="760" fill="#fffaf5"/>
+  <rect x="40" y="40" width="1120" height="680" rx="34" fill="#fff" stroke="#ead8c5" stroke-width="3"/>
+  <text x="600" y="104" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="800" fill="#4f2d16">필수 선택 옵션 구조</text>
+  <text x="600" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#766052">1차 선택은 카테고리, 2차 선택은 실제 구매 옵션으로 구성</text>
+  <rect x="390" y="190" width="420" height="74" rx="24" fill="#4f2d16"/>
+  <text x="600" y="238" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="800" fill="#fff">상품 카테고리</text>
+  <line x1="600" y1="264" x2="600" y2="316" stroke="#d9b997" stroke-width="4"/>
+  <line x1="190" y1="316" x2="1010" y2="316" stroke="#d9b997" stroke-width="4"/>
+  <line x1="190" y1="316" x2="190" y2="354" stroke="#d9b997" stroke-width="4"/>
+  <line x1="460" y1="316" x2="460" y2="354" stroke="#d9b997" stroke-width="4"/>
+  <line x1="730" y1="316" x2="730" y2="354" stroke="#d9b997" stroke-width="4"/>
+  <line x1="1010" y1="316" x2="1010" y2="354" stroke="#d9b997" stroke-width="4"/>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="80" y="354" width="220" height="310" rx="24" fill="#fff7ef" stroke="#ead8c5" stroke-width="2"/>
+    <text x="190" y="410" text-anchor="middle" font-size="30" font-weight="800" fill="#4f2d16">밀웜</text>
+    <text x="112" y="464" font-size="22" fill="#5d4638">생밀웜 1kg / 소</text>
+    <text x="112" y="510" font-size="22" fill="#5d4638">생밀웜 1kg / 중</text>
+    <text x="112" y="556" font-size="22" fill="#5d4638">생밀웜 1kg / 대</text>
+
+    <rect x="350" y="354" width="220" height="310" rx="24" fill="#fff7ef" stroke="#ead8c5" stroke-width="2"/>
+    <text x="460" y="410" text-anchor="middle" font-size="30" font-weight="800" fill="#4f2d16">슈퍼밀웜</text>
+    <text x="382" y="462" font-size="21" fill="#5d4638">마리수형 / 소·중·대</text>
+    <text x="382" y="508" font-size="21" fill="#5d4638">500~5000마리</text>
+    <text x="382" y="554" font-size="21" fill="#5d4638">1kg형 / 소</text>
+    <text x="382" y="600" font-size="21" fill="#5d4638">1kg형 / 중</text>
+    <text x="382" y="646" font-size="21" fill="#5d4638">1kg형 / 대</text>
+
+    <rect x="620" y="354" width="220" height="310" rx="24" fill="#fff7ef" stroke="#ead8c5" stroke-width="2"/>
+    <text x="730" y="410" text-anchor="middle" font-size="30" font-weight="800" fill="#4f2d16">건조 밀웜</text>
+    <text x="652" y="464" font-size="22" fill="#5d4638">건조밀웜 / 0.5kg</text>
+    <text x="652" y="510" font-size="22" fill="#5d4638">건조밀웜 / 1.0kg</text>
+    <text x="652" y="556" font-size="20" fill="#7d6658">크기 선택 없음</text>
+
+    <rect x="900" y="354" width="220" height="310" rx="24" fill="#fff7ef" stroke="#ead8c5" stroke-width="2"/>
+    <text x="1010" y="410" text-anchor="middle" font-size="28" font-weight="800" fill="#4f2d16">건조슈퍼밀웜</text>
+    <text x="932" y="464" font-size="21" fill="#5d4638">건조슈퍼밀웜 / 0.5kg</text>
+    <text x="932" y="510" font-size="21" fill="#5d4638">건조슈퍼밀웜 / 1.0kg</text>
+    <text x="932" y="556" font-size="20" fill="#7d6658">크기 선택 없음</text>
+  </g>
+</svg>

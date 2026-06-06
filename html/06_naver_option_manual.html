@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>네이버 스마트스토어 옵션 설정 매뉴얼</title>
+  <script src="../assets/page-width.js"></script>
+  <link rel="stylesheet" href="../assets/naver-smartstore.css">
+  <style>
+    .manual{padding:42px 24px}
+    .manual-hero{background:#fff7ef;border-bottom:1px solid var(--line)}
+    .manual-hero .page{padding:46px 24px;background:transparent}
+    .manual-hero h1{margin:0;color:var(--brown);font-size:40px;line-height:1.2;letter-spacing:-.04em}
+    .manual-hero p{max-width:760px;color:#6d5749;line-height:1.8;font-size:16px}
+    .manual-nav{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+    .manual-nav a{color:var(--brown);background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 12px;text-decoration:none;font-size:13px}
+    .manual-section{border-bottom:1px solid #f0e3d6}
+    .manual-section h2{margin:0 0 14px;color:var(--brown);font-size:30px;letter-spacing:-.04em}
+    .manual-section h3{margin:28px 0 10px;color:var(--brown);font-size:22px}
+    .manual-section p,.manual-section li{color:#5d4638;line-height:1.8;font-size:15px}
+    .manual-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .manual-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px}
+    .manual-card h3{margin-top:0}
+    .manual-image{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;margin:18px 0}
+    .manual-image img{width:100%;height:auto}
+    .manual-table{width:100%;overflow:auto;border:1px solid var(--line);border-radius:18px;background:#fff;margin:14px 0}
+    .manual-table table{min-width:760px;width:100%;border-collapse:collapse}
+    .manual-table th,.manual-table td{font-size:14px;padding:11px 10px;text-align:left}
+    .manual-table th{text-align:left}
+    .manual-table td:first-child{width:150px}
+    .manual-kbd{display:inline-block;background:#fff0dd;color:var(--brown);border-radius:6px;padding:0 .35em}
+    .manual-note{background:#fff4e8;border:1px solid #e4c7aa;border-radius:16px;padding:14px;color:#5d4638;line-height:1.7}
+    .manual-danger{background:#fff3ed;border-color:#efcdbd}
+    .source-list a{color:var(--brown)}
+    @media (max-width:700px){
+      .manual-table{overflow:visible;border:0;background:transparent}
+      .manual-table table,.manual-table thead,.manual-table tbody,.manual-table tr,.manual-table td{display:block;min-width:0;width:100%}
+      .manual-table thead{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+      .manual-table tr{background:#fff;border:1px solid var(--line);border-radius:16px;margin:0 0 12px;padding:12px}
+      .manual-table td{padding:8px 0;border-bottom:1px solid #f4e5d6}
+      .manual-table td:first-child{width:100%;color:var(--brown)}
+      .manual-table td:last-child{border-bottom:0}
+      .manual-table td::before{content:attr(data-label);display:block;margin-bottom:3px;color:#a06532;font-size:12px}
+    }
+    @media (max-width:640px){
+      .manual{padding:34px 16px}
+      .manual-hero .page{padding:38px 18px}
+      .manual-hero h1{font-size:32px}
+      .manual-grid{grid-template-columns:1fr}
+      .manual-section h2{font-size:26px}
+    }
+  </style>
+</head>
+<body>
+<header class="manual-hero">
+  <div class="page">
+    <h1>네이버 스마트스토어<br>옵션 설정 매뉴얼</h1>
+    <p>밀웜, 슈퍼밀웜, 건조 밀웜, 건조슈퍼밀웜을 하나의 상품에서 필수 선택 옵션으로 운영하기 위한 설정 가이드입니다. 실제 판매자센터에서는 화면 명칭이 일부 달라질 수 있으므로, 아래 구조를 기준으로 입력하면 됩니다.</p>
+    <div class="manual-nav">
+      <a href="#summary">추천 구조</a>
+      <a href="#values">입력값</a>
+      <a href="#steps">등록 순서</a>
+      <a href="#price-stock">가격·재고</a>
+      <a href="#cleanup">조합 정리</a>
+      <a href="#checklist">최종 점검</a>
+    </div>
+  </div>
+</header>
+
+<main class="page">
+  <section class="manual manual-section" id="summary">
+    <h2>1. 결론: 조합형 필수 옵션으로 설정</h2>
+    <p>원하는 구조는 구매자가 먼저 <span class="mark key">상품 카테고리</span>를 고르고, 그 다음 <span class="mark key">세부 선택</span>을 고르는 방식입니다. 네이버 스마트스토어에서는 이 구조를 보통 <span class="mark good">필수 선택 옵션 + 선택형 + 조합형</span>으로 구성합니다.</p>
+    <div class="manual-image">
+      <img src="../assets/option-category-map.svg" alt="상품 카테고리 아래 세부 선택 옵션이 배치되는 구조도">
+    </div>
+    <div class="manual-grid">
+      <div class="manual-card">
+        <h3>옵션명 1</h3>
+        <p><span class="manual-kbd">상품 카테고리</span>로 입력합니다.</p>
+        <ul>
+          <li>밀웜</li>
+          <li>슈퍼밀웜</li>
+          <li>건조 밀웜</li>
+          <li>건조슈퍼밀웜</li>
+        </ul>
+      </div>
+      <div class="manual-card">
+        <h3>옵션명 2</h3>
+        <p><span class="manual-kbd">세부 선택</span>으로 입력합니다.</p>
+        <p>실제 구매 단위, 크기, 중량, 마리수를 한 줄 안에 넣습니다. 예: <span class="mark key">마리수형 / 중 / 1000마리</span></p>
+      </div>
+    </div>
+    <p class="manual-note">중요: 스마트스토어 옵션이 완전한 폴더형 메뉴처럼 보이지 않을 수 있습니다. 그래도 1차 옵션을 카테고리로, 2차 옵션을 세부 선택으로 만들면 구매 흐름은 “카테고리 선택 → 세부 상품 선택”에 가깝게 운영할 수 있습니다.</p>
+  </section>
+
+  <section class="manual manual-section" id="values">
+    <h2>2. 옵션 입력값 전체 목록</h2>
+    <p>아래 표를 그대로 기준으로 삼으면 됩니다. <span class="mark warn">카테고리와 맞지 않는 세부 선택 조합은 판매 상태로 두면 안 됩니다.</span></p>
+    <div class="manual-table">
+      <table>
+        <thead><tr><th>상품 카테고리</th><th>세부 선택 값</th><th>운영 메모</th></tr></thead>
+        <tbody>
+          <tr><td data-label="상품 카테고리">밀웜</td><td data-label="세부 선택 값">생밀웜 1kg / 소<br>생밀웜 1kg / 중<br>생밀웜 1kg / 대</td><td data-label="운영 메모">1kg 중량 기준, 크기 3종</td></tr>
+          <tr><td data-label="상품 카테고리">슈퍼밀웜</td><td data-label="세부 선택 값">마리수형 / 소 / 500마리<br>마리수형 / 소 / 1000마리<br>마리수형 / 소 / 2000마리<br>마리수형 / 소 / 3000마리<br>마리수형 / 소 / 5000마리<br><br>마리수형 / 중 / 500마리<br>마리수형 / 중 / 1000마리<br>마리수형 / 중 / 2000마리<br>마리수형 / 중 / 3000마리<br>마리수형 / 중 / 5000마리<br><br>마리수형 / 대 / 500마리<br>마리수형 / 대 / 1000마리<br>마리수형 / 대 / 2000마리<br>마리수형 / 대 / 3000마리<br>마리수형 / 대 / 5000마리<br><br>슈퍼밀웜 1kg / 소<br>슈퍼밀웜 1kg / 중<br>슈퍼밀웜 1kg / 대</td><td data-label="운영 메모">마리수형 15개 + 1kg형 3개</td></tr>
+          <tr><td data-label="상품 카테고리">건조 밀웜</td><td data-label="세부 선택 값">건조밀웜 / 0.5kg<br>건조밀웜 / 1.0kg</td><td data-label="운영 메모">크기 선택 없음, 중량 2종</td></tr>
+          <tr><td data-label="상품 카테고리">건조슈퍼밀웜</td><td data-label="세부 선택 값">건조슈퍼밀웜 / 0.5kg<br>건조슈퍼밀웜 / 1.0kg</td><td data-label="운영 메모">크기 선택 없음, 중량 2종</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="manual-note">세부 선택 값은 길어도 명확한 쪽이 좋습니다. “중 / 1000마리”처럼 짧게 쓰면 어떤 상품군의 옵션인지 헷갈릴 수 있으므로, 슈퍼밀웜은 <span class="mark key">마리수형 / 크기 / 수량</span>, 건조 상품은 <span class="mark key">상품명 / 중량</span> 형식을 권장합니다.</p>
+  </section>
+
+  <section class="manual manual-section" id="steps">
+    <h2>3. 판매자센터 등록 순서</h2>
+    <div class="manual-image">
+      <img src="../assets/option-seller-steps.svg" alt="스마트스토어 판매자센터 옵션 등록 순서">
+    </div>
+    <ol>
+      <li>스마트스토어 판매자센터에서 <span class="mark key">상품 등록</span> 또는 기존 상품의 <span class="mark key">상품 수정</span> 화면으로 들어갑니다.</li>
+      <li><span class="mark key">옵션/추가상품</span> 영역을 찾습니다.</li>
+      <li>옵션 사용을 켜고, 구매자가 반드시 고르게 할 옵션이므로 <span class="mark good">필수 선택</span>으로 둡니다.</li>
+      <li>옵션 방식은 <span class="mark good">선택형</span>을 사용합니다. 직접입력형은 메모 입력용에 가까우므로 이 상품 구조에는 맞지 않습니다.</li>
+      <li>등록 방식은 <span class="mark good">조합형</span>을 선택합니다. 그래야 카테고리와 세부 선택 조합마다 가격, 재고, 품절 상태를 관리할 수 있습니다.</li>
+      <li>옵션명 1에는 <span class="manual-kbd">상품 카테고리</span>를 입력하고, 옵션값에는 <span class="manual-kbd">밀웜, 슈퍼밀웜, 건조 밀웜, 건조슈퍼밀웜</span>을 입력합니다.</li>
+      <li>옵션명 2에는 <span class="manual-kbd">세부 선택</span>을 입력하고, 위 표의 세부 선택 값을 모두 입력합니다.</li>
+      <li>조합이 생성되면 가격, 재고, 판매상태를 입력합니다.</li>
+    </ol>
+  </section>
+
+  <section class="manual manual-section" id="price-stock">
+    <h2>4. 가격·재고 입력 방식</h2>
+    <h3>기준 판매가를 먼저 정합니다</h3>
+    <p>스마트스토어 옵션가는 보통 상품의 기본 판매가에 옵션 추가금을 더하는 방식으로 운영합니다. 그래서 상품 등록 화면의 기본 판매가는 <span class="mark key">가장 낮은 정상 판매가</span> 또는 <span class="mark key">대표로 삼을 기준 상품 가격</span>으로 잡는 것이 관리하기 쉽습니다.</p>
+    <div class="manual-card">
+      <h3>예시</h3>
+      <p>기본 판매가를 10,000원으로 잡았다면, 실제 판매가가 13,000원인 옵션의 옵션가는 +3,000원으로 입력합니다. 실제 판매가가 기본 판매가와 같으면 옵션가는 0원입니다.</p>
+    </div>
+    <h3>재고는 옵션 조합별로 관리합니다</h3>
+    <ul>
+      <li>생물 상품은 크기와 수량별 재고가 달라질 수 있으므로 <span class="mark good">옵션별 재고</span>를 반드시 입력합니다.</li>
+      <li>일시 품절된 크기나 수량은 전체 상품을 내리지 말고 해당 조합만 <span class="mark warn">품절</span> 처리합니다.</li>
+      <li>평일 오후 2시 이전 당일 발송 기준을 지키기 어려운 조합은 재고를 줄이거나 품절 처리하는 편이 안전합니다.</li>
+    </ul>
+    <p class="manual-note manual-danger">주의: 옵션 추가금은 카테고리와 상품 성격에 따라 정책 제한이 있을 수 있습니다. 네이버 공식 도움말에서도 옵션 추가금, 옵션명, 상품 정보 불일치가 등록 기준 검토 대상이 될 수 있다고 안내합니다. 판매 전 현재 카테고리 정책을 한 번 더 확인하세요.</p>
+  </section>
+
+  <section class="manual manual-section" id="cleanup">
+    <h2>5. 조합 생성 후 반드시 정리할 것</h2>
+    <p>2단계 조합형으로 만들면 시스템이 카테고리 4개와 세부 선택 전체를 조합할 수 있습니다. 이때 실제로 말이 안 되는 조합은 삭제하거나 품절/미노출 처리해야 합니다.</p>
+    <div class="manual-image">
+      <img src="../assets/option-combination-grid.svg" alt="옵션 조합 중 정상 조합과 삭제할 조합 예시">
+    </div>
+    <div class="manual-grid">
+      <div class="manual-card">
+        <h3>남겨야 하는 조합</h3>
+        <ul>
+          <li>밀웜 + 생밀웜 1kg / 소</li>
+          <li>슈퍼밀웜 + 마리수형 / 중 / 1000마리</li>
+          <li>슈퍼밀웜 + 슈퍼밀웜 1kg / 대</li>
+          <li>건조 밀웜 + 건조밀웜 / 1.0kg</li>
+          <li>건조슈퍼밀웜 + 건조슈퍼밀웜 / 0.5kg</li>
+        </ul>
+      </div>
+      <div class="manual-card">
+        <h3>삭제 또는 품절 처리할 조합</h3>
+        <ul>
+          <li>밀웜 + 건조밀웜 / 1.0kg</li>
+          <li>건조 밀웜 + 생밀웜 1kg / 대</li>
+          <li>건조슈퍼밀웜 + 슈퍼밀웜 1kg / 소</li>
+          <li>슈퍼밀웜 + 건조슈퍼밀웜 / 0.5kg</li>
+        </ul>
+      </div>
+    </div>
+    <p class="manual-note">가능하면 “품절”보다 “삭제”가 더 깔끔합니다. 구매 화면에서 말이 안 되는 조합이 보이지 않아야 고객이 헷갈리지 않습니다. 단, 판매자센터에서 삭제가 어렵거나 나중에 복구해야 하는 경우에는 품절/미노출 상태로 관리합니다.</p>
+  </section>
+
+  <section class="manual manual-section" id="detail-page">
+    <h2>6. 상세페이지와 옵션명의 연결</h2>
+    <p>상품 상세 이미지에는 이미 상품별 차이가 설명되어 있으므로, 옵션명은 너무 길게 쓰기보다 주문 실수 방지에 필요한 정보만 넣는 것이 좋습니다.</p>
+    <div class="manual-table">
+      <table>
+        <thead><tr><th>상세페이지 표현</th><th>옵션명 권장 표현</th><th>이유</th></tr></thead>
+        <tbody>
+          <tr><td data-label="상세페이지 표현">생밀웜 1kg</td><td data-label="옵션명 권장 표현">생밀웜 1kg / 소</td><td data-label="이유">상품명, 중량, 크기가 바로 보임</td></tr>
+          <tr><td data-label="상세페이지 표현">슈퍼밀웜 마리수 선택</td><td data-label="옵션명 권장 표현">마리수형 / 중 / 1000마리</td><td data-label="이유">마리수형과 1kg형 혼동 방지</td></tr>
+          <tr><td data-label="상세페이지 표현">슈퍼밀웜 1kg</td><td data-label="옵션명 권장 표현">슈퍼밀웜 1kg / 대</td><td data-label="이유">중량형 상품임을 명확히 표시</td></tr>
+          <tr><td data-label="상세페이지 표현">건조밀웜</td><td data-label="옵션명 권장 표현">건조밀웜 / 0.5kg</td><td data-label="이유">건조 상품은 크기 선택이 없으므로 중량만 표시</td></tr>
+          <tr><td data-label="상세페이지 표현">건조슈퍼밀웜</td><td data-label="옵션명 권장 표현">건조슈퍼밀웜 / 1.0kg</td><td data-label="이유">건조밀웜과 건조슈퍼밀웜 혼동 방지</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="manual manual-section" id="checklist">
+    <h2>7. 저장 전 최종 체크리스트</h2>
+    <div class="manual-grid">
+      <div class="manual-card">
+        <h3>옵션 구조</h3>
+        <ul>
+          <li>옵션명 1이 상품 카테고리인지 확인</li>
+          <li>옵션명 2가 세부 선택인지 확인</li>
+          <li>밀웜, 슈퍼밀웜, 건조 밀웜, 건조슈퍼밀웜 4개 카테고리가 모두 있는지 확인</li>
+          <li>카테고리와 맞지 않는 세부 선택이 보이지 않는지 확인</li>
+        </ul>
+      </div>
+      <div class="manual-card">
+        <h3>가격·재고</h3>
+        <ul>
+          <li>기본 판매가와 옵션 추가금 계산이 맞는지 확인</li>
+          <li>옵션별 재고가 실제 출고 가능 수량과 맞는지 확인</li>
+          <li>품절 옵션이 정상적으로 품절 표시되는지 확인</li>
+          <li>제주/도서 추가 배송비와 배송 안내가 상세페이지와 충돌하지 않는지 확인</li>
+        </ul>
+      </div>
+      <div class="manual-card">
+        <h3>고객 화면</h3>
+        <ul>
+          <li>미리보기에서 카테고리 선택 후 세부 선택 흐름을 확인</li>
+          <li>건조 상품에 생물 크기 옵션이 보이지 않는지 확인</li>
+          <li>밀웜 카테고리에 슈퍼밀웜 옵션이 보이지 않는지 확인</li>
+          <li>주문 테스트로 선택한 옵션명이 주문서에 명확히 표시되는지 확인</li>
+        </ul>
+      </div>
+      <div class="manual-card">
+        <h3>운영 팁</h3>
+        <ul>
+          <li>자주 품절되는 옵션은 옵션명 앞에 “품절임박”을 붙이지 말고 재고 상태로 관리</li>
+          <li>가격이 자주 바뀌는 옵션은 엑셀/일괄수정 기능 활용</li>
+          <li>판매 중 옵션명을 바꾸면 기존 주문 확인이 헷갈릴 수 있으므로 변경 이력을 남기기</li>
+          <li>상세페이지 이미지와 옵션명이 같은 용어를 쓰는지 확인</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="manual manual-section">
+    <h2>8. 공식 도움말 확인 위치</h2>
+    <p>판매자센터 화면 구성과 정책은 바뀔 수 있습니다. 저장 전에는 아래 공식 도움말의 옵션 관련 항목을 같이 확인하세요.</p>
+    <ul class="source-list">
+      <li><a href="https://help.sell.smartstore.naver.com/faq/content.help?faqId=5305">스마트스토어 고객센터: 상품 등록 관련 자주 묻는 질문</a></li>
+      <li><a href="https://help.sell.smartstore.naver.com/faq/content.help?faqId=15745">스마트스토어 고객센터: 상품 등록 기준 및 옵션 추가금 관련 안내</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
