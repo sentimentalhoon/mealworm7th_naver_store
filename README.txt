@@ -69,6 +69,7 @@ Cloudflare Pages 배포 설정
 Cloudflare Workers Builds 배포 설정
 - Build command: npm run build
 - Deploy command: npx wrangler deploy
+- Output directory 입력란이 없으면 정상입니다. Workers Builds에서는 wrangler.toml의 [assets] directory 설정을 사용합니다.
 
 참고
 - Deploy command가 필수라면 Workers Builds 프로젝트입니다.
