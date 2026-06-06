@@ -60,3 +60,12 @@ v8 추가 반영
 주의
 - exports/ 폴더는 생성 산출물이므로 Git에는 포함하지 않습니다.
 - 상세 이미지를 외부 URL로 호스팅해서 HTML에 넣는 경우, 네이버 모바일 미리보기 캐시 때문에 수정 때마다 이미지 파일명 또는 URL을 바꾸는 것이 안전합니다.
+
+Cloudflare Pages 배포 설정
+- Build command: npm run build
+- Build output directory: dist
+- Deploy command: 비워두기
+
+참고
+- Cloudflare가 npx wrangler deploy를 Deploy command로 실행하고 있다면 Pages 정적 사이트 배포 설정이 아니라 Workers 배포 설정일 수 있습니다.
+- 이 저장소는 정적 상세페이지이므로 Cloudflare Pages에서 Git 저장소를 연결하고 위 설정으로 배포하는 방식을 권장합니다.

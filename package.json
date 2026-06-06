@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "node tools/build-site.mjs",
     "export:integrated": "node tools/export-smartstore-images.mjs"
   },
   "devDependencies": {
