@@ -66,6 +66,11 @@ Cloudflare Pages 배포 설정
 - Build output directory: dist
 - Deploy command: 비워두기
 
+Cloudflare Workers Builds 배포 설정
+- Build command: npm run build
+- Deploy command: npx wrangler deploy
+
 참고
-- Cloudflare가 npx wrangler deploy를 Deploy command로 실행하고 있다면 Pages 정적 사이트 배포 설정이 아니라 Workers 배포 설정일 수 있습니다.
-- 이 저장소는 정적 상세페이지이므로 Cloudflare Pages에서 Git 저장소를 연결하고 위 설정으로 배포하는 방식을 권장합니다.
+- Deploy command가 필수라면 Workers Builds 프로젝트입니다.
+- wrangler.toml에서 정적 자산 경로를 dist/로 지정했으므로 npx wrangler deploy가 dist 안의 index.html, html/, assets/만 배포합니다.
+- Pages로 새 프로젝트를 만들 경우에는 Deploy command를 비우고 Build output directory를 dist로 설정하세요.
