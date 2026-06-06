@@ -55,13 +55,16 @@
 <header class="manual-hero">
   <div class="page">
     <h1>네이버 스마트스토어<br>옵션 설정 매뉴얼</h1>
-    <p>밀웜, 슈퍼밀웜, 건조 밀웜, 건조슈퍼밀웜을 하나의 상품에서 필수 선택 옵션으로 운영하기 위한 설정 가이드입니다. 실제 판매자센터에서는 화면 명칭이 일부 달라질 수 있으므로, 아래 구조를 기준으로 입력하면 됩니다.</p>
+    <p>밀웜7번가 네이버 스마트스토어에서 밀웜, 슈퍼밀웜, 건조 밀웜, 건조슈퍼밀웜을 하나의 상품 안에서 필수 선택 옵션으로 운영하기 위한 설정 가이드입니다. 실제 판매자센터에서는 화면 명칭이 일부 달라질 수 있으므로, 아래 구조와 점검 항목을 기준으로 입력하면 됩니다.</p>
     <div class="manual-nav">
       <a href="#summary">추천 구조</a>
       <a href="#values">입력값</a>
       <a href="#steps">등록 순서</a>
       <a href="#price-stock">가격·재고</a>
+      <a href="#price-policy">가격 제한</a>
       <a href="#cleanup">조합 정리</a>
+      <a href="#delivery-claims">배송·클레임</a>
+      <a href="#listing-check">이미지·취급</a>
       <a href="#checklist">최종 점검</a>
     </div>
   </div>
@@ -91,6 +94,7 @@
         <p>실제 구매 단위, 크기, 중량, 마리수를 한 줄 안에 넣습니다. 예: <span class="mark key">마리수형 / 중 / 1000마리</span></p>
       </div>
     </div>
+    <p class="manual-note">밀웜7번가 적용 전제: 통합 상품으로 운영하되, 고객 화면에서는 카테고리와 맞는 세부 옵션만 보이게 관리합니다. 가격표 확정 후 옵션가 제한을 넘는 조합이 있으면 통합 상품을 고집하지 말고 생물/건조 또는 밀웜/슈퍼밀웜 단위로 상품을 분리합니다.</p>
     <p class="manual-note">중요: 스마트스토어 옵션이 완전한 폴더형 메뉴처럼 보이지 않을 수 있습니다. 그래도 1차 옵션을 카테고리로, 2차 옵션을 세부 선택으로 만들면 구매 흐름은 “카테고리 선택 → 세부 상품 선택”에 가깝게 운영할 수 있습니다.</p>
   </section>
 
@@ -142,14 +146,40 @@
       <li>일시 품절된 크기나 수량은 전체 상품을 내리지 말고 해당 조합만 <span class="mark warn">품절</span> 처리합니다.</li>
       <li>평일 오후 2시 이전 당일 발송 기준을 지키기 어려운 조합은 재고를 줄이거나 품절 처리하는 편이 안전합니다.</li>
     </ul>
-    <p class="manual-note manual-danger">주의: 옵션 추가금은 카테고리와 상품 성격에 따라 정책 제한이 있을 수 있습니다. 네이버 공식 도움말에서도 옵션 추가금, 옵션명, 상품 정보 불일치가 등록 기준 검토 대상이 될 수 있다고 안내합니다. 판매 전 현재 카테고리 정책을 한 번 더 확인하세요.</p>
+    <p class="manual-note manual-danger">주의: 옵션 추가금은 카테고리와 상품 성격에 따라 정책 제한이 있을 수 있습니다. 가격표를 확정한 뒤 아래 “가격 제한” 섹션의 항목을 먼저 계산하고 등록하세요.</p>
+  </section>
+
+  <section class="manual manual-section" id="price-policy">
+    <h2>5. 옵션가 제한은 가격표 확정 후 계산</h2>
+    <p>밀웜7번가 실제 판매가를 받으면 아래 항목을 먼저 확인합니다. 금액 차이가 큰 옵션을 한 상품에 억지로 묶으면 등록 제한이나 가격 오인 문제가 생길 수 있습니다.</p>
+    <div class="manual-grid">
+      <div class="manual-card">
+        <h3>필수 계산 항목</h3>
+        <ul>
+          <li>기본 판매가로 둘 옵션을 1개 정합니다.</li>
+          <li>기본 판매가와 같은 옵션은 옵션가를 <span class="mark good">0원</span>으로 둡니다.</li>
+          <li>각 옵션의 실제 판매가에서 기본 판매가를 빼서 옵션가를 계산합니다.</li>
+          <li>최저가와 최고가 차이가 네이버 옵션가 제한 범위 안에 들어오는지 확인합니다.</li>
+        </ul>
+      </div>
+      <div class="manual-card">
+        <h3>분리해야 하는 경우</h3>
+        <ul>
+          <li>가장 비싼 옵션의 추가금이 제한 범위를 넘는 경우</li>
+          <li>대표 가격으로 보이는 금액과 실제 주력 옵션 가격 차이가 너무 큰 경우</li>
+          <li>생물 상품과 건조 상품의 가격 구조가 달라 고객이 가격을 오해할 수 있는 경우</li>
+          <li>옵션명만으로 상품 종류, 중량, 마리수를 충분히 구분하기 어려운 경우</li>
+        </ul>
+      </div>
+    </div>
+    <p class="manual-note manual-danger">가격표 확정 전에는 옵션가를 임의로 입력하지 않습니다. 가격표를 받으면 “기본 판매가 / 실제 판매가 / 옵션가 / 재고 / 판매상태” 표를 별도로 만든 뒤 등록합니다.</p>
   </section>
 
   <section class="manual manual-section" id="cleanup">
-    <h2>5. 조합 생성 후 반드시 정리할 것</h2>
-    <p>2단계 조합형으로 만들면 시스템이 카테고리 4개와 세부 선택 전체를 조합할 수 있습니다. 이때 실제로 말이 안 되는 조합은 삭제하거나 품절/미노출 처리해야 합니다.</p>
+    <h2>6. 조합 생성 후 반드시 정리할 것</h2>
+    <p>2단계 조합형으로 만들면 시스템이 카테고리 4개와 세부 선택 전체를 조합할 수 있습니다. 이때 실제로 말이 안 되는 조합은 판매 상태로 두지 말고 <span class="mark warn">사용여부 N 또는 미노출</span>로 정리합니다.</p>
     <div class="manual-image">
-      <img src="../assets/option-combination-grid.svg" alt="옵션 조합 중 정상 조합과 삭제할 조합 예시">
+      <img src="../assets/option-combination-grid.svg" alt="옵션 조합 중 정상 조합과 미노출 처리할 조합 예시">
     </div>
     <div class="manual-grid">
       <div class="manual-card">
@@ -163,7 +193,7 @@
         </ul>
       </div>
       <div class="manual-card">
-        <h3>삭제 또는 품절 처리할 조합</h3>
+        <h3>사용여부 N 또는 미노출 처리할 조합</h3>
         <ul>
           <li>밀웜 + 건조밀웜 / 1.0kg</li>
           <li>건조 밀웜 + 생밀웜 1kg / 대</li>
@@ -172,11 +202,11 @@
         </ul>
       </div>
     </div>
-    <p class="manual-note">가능하면 “품절”보다 “삭제”가 더 깔끔합니다. 구매 화면에서 말이 안 되는 조합이 보이지 않아야 고객이 헷갈리지 않습니다. 단, 판매자센터에서 삭제가 어렵거나 나중에 복구해야 하는 경우에는 품절/미노출 상태로 관리합니다.</p>
+    <p class="manual-note">핵심은 구매 화면에서 말이 안 되는 조합이 보이지 않는 것입니다. 삭제가 가능하면 삭제하고, 판매자센터 구조상 삭제가 어렵거나 나중에 복구해야 하는 경우에는 사용여부 N, 품절, 미노출 중 고객에게 노출되지 않는 방식으로 관리합니다.</p>
   </section>
 
   <section class="manual manual-section" id="detail-page">
-    <h2>6. 상세페이지와 옵션명의 연결</h2>
+    <h2>7. 상세페이지와 옵션명의 연결</h2>
     <p>상품 상세 이미지에는 이미 상품별 차이가 설명되어 있으므로, 옵션명은 너무 길게 쓰기보다 주문 실수 방지에 필요한 정보만 넣는 것이 좋습니다.</p>
     <div class="manual-table">
       <table>
@@ -192,8 +222,81 @@
     </div>
   </section>
 
+  <section class="manual manual-section" id="delivery-claims">
+    <h2>8. 배송·교환/환불 운영 문구</h2>
+    <p>상세페이지의 배송 안내는 고객에게 명확해야 하지만, 모든 교환·환불을 일괄 거부하는 식으로 보이면 분쟁이 생길 수 있습니다. 생물 특성 안내와 판매자 귀책 처리는 분리해서 적습니다.</p>
+    <div class="manual-grid">
+      <div class="manual-card">
+        <h3>권장 클레임 문구</h3>
+        <p>수령 지연, 장시간 미개봉, 보관 부주의 등 구매자 귀책으로 인한 생물 상태 이상은 교환·환불이 어려울 수 있습니다. 단, 오배송·상품정보 상이 등 판매자 귀책 사유는 판매자센터 기준에 따라 처리합니다.</p>
+      </div>
+      <div class="manual-card">
+        <h3>오늘출발 사용 여부</h3>
+        <ul>
+          <li>오늘출발을 켤 경우 마감 시간, 휴무일, 재고를 실제 출고 가능 기준으로 맞춥니다.</li>
+          <li>오늘출발을 켜지 않을 경우 상세페이지에는 “평일 오후 2시 이전 주문 건 당일 발송 기준”처럼 운영 기준으로 안내합니다.</li>
+          <li>기상, 지역, 택배사 사정으로 일정이 달라질 수 있다는 문구는 유지합니다.</li>
+        </ul>
+      </div>
+      <div class="manual-card">
+        <h3>배송비·도서산간</h3>
+        <ul>
+          <li>기본 배송비 3,000원 문구와 판매자센터 배송비 설정이 일치해야 합니다.</li>
+          <li>제주 및 도서 지역 추가 배송비는 실제 설정 금액과 충돌하지 않아야 합니다.</li>
+          <li>묶음배송, 추가 구매, 무료배송 조건이 있다면 상세페이지에 같은 기준으로 반영합니다.</li>
+        </ul>
+      </div>
+      <div class="manual-card">
+        <h3>생물 배송 증빙</h3>
+        <ul>
+          <li>폐사 문의는 도착 당일, 수령 직후 촬영 사진 기준으로 안내합니다.</li>
+          <li>오전 수령 조건, 장시간 미개봉 제외 조건을 주문 전 안내와 동일하게 유지합니다.</li>
+          <li>50% 재배송 문구는 실제 운영 정책과 맞을 때만 사용합니다.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="manual manual-section" id="listing-check">
+    <h2>9. 대표이미지·카테고리·취급 가능성 체크</h2>
+    <div class="manual-grid">
+      <div class="manual-card">
+        <h3>대표이미지</h3>
+        <ul>
+          <li>대표이미지는 정사각형 기준으로 준비합니다.</li>
+          <li>상품 실물, 포장, 옵션을 고객이 오해하지 않게 보여줍니다.</li>
+          <li>상세페이지 PNG와 대표이미지의 상품명·포장 표현이 충돌하지 않게 확인합니다.</li>
+        </ul>
+      </div>
+      <div class="manual-card">
+        <h3>상세이미지 업로드</h3>
+        <ul>
+          <li>통합 상세페이지는 export된 PNG를 파일명 순서대로 업로드합니다.</li>
+          <li>수정 후 외부 URL 방식으로 넣는 경우 네이버 모바일 캐시를 피하려면 파일명이나 URL을 바꿉니다.</li>
+          <li>모바일 미리보기에서 표와 안내 문구가 작게 깨지지 않는지 확인합니다.</li>
+        </ul>
+      </div>
+      <div class="manual-card">
+        <h3>카테고리·취급 문구</h3>
+        <ul>
+          <li>야생 채집 개체가 아닌 판매용 사육 상품인지 확인합니다.</li>
+          <li>식용이 아니라 반려동물, 파충류, 조류 등의 급여용 먹이로 안내합니다.</li>
+          <li>선택한 스마트스토어 카테고리와 상품명, 옵션명, 상세페이지 표현이 같은 용어를 쓰는지 확인합니다.</li>
+        </ul>
+      </div>
+      <div class="manual-card">
+        <h3>등록 전 테스트</h3>
+        <ul>
+          <li>밀웜7번가 고객 화면에서 카테고리 선택 후 정상 옵션만 보이는지 확인합니다.</li>
+          <li>장바구니와 주문서에 옵션명이 충분히 명확하게 표시되는지 확인합니다.</li>
+          <li>모바일에서 배송·교환/환불 안내가 상세페이지 하단까지 빠짐없이 보이는지 확인합니다.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section class="manual manual-section" id="checklist">
-    <h2>7. 저장 전 최종 체크리스트</h2>
+    <h2>10. 저장 전 최종 체크리스트</h2>
     <div class="manual-grid">
       <div class="manual-card">
         <h3>옵션 구조</h3>
@@ -208,6 +311,8 @@
         <h3>가격·재고</h3>
         <ul>
           <li>기본 판매가와 옵션 추가금 계산이 맞는지 확인</li>
+          <li>옵션가 0원으로 구매 가능한 정상 조합이 있는지 확인</li>
+          <li>가격표 기준으로 옵션가 제한 범위를 넘지 않는지 확인</li>
           <li>옵션별 재고가 실제 출고 가능 수량과 맞는지 확인</li>
           <li>품절 옵션이 정상적으로 품절 표시되는지 확인</li>
           <li>제주/도서 추가 배송비와 배송 안내가 상세페이지와 충돌하지 않는지 확인</li>
@@ -231,13 +336,28 @@
           <li>상세페이지 이미지와 옵션명이 같은 용어를 쓰는지 확인</li>
         </ul>
       </div>
+      <div class="manual-card">
+        <h3>정책·문구</h3>
+        <ul>
+          <li>교환·환불 제한 문구가 구매자 귀책과 판매자 귀책을 구분하는지 확인</li>
+          <li>오늘출발 사용 여부와 상세페이지 발송 문구가 일치하는지 확인</li>
+          <li>대표이미지, 상세이미지, 옵션명이 같은 상품 구조를 설명하는지 확인</li>
+          <li>식용이 아닌 급여용 먹이 상품으로 표현되어 있는지 확인</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <section class="manual manual-section">
-    <h2>8. 공식 도움말 확인 위치</h2>
+    <h2>11. 공식 도움말 확인 위치</h2>
     <p>판매자센터 화면 구성과 정책은 바뀔 수 있습니다. 저장 전에는 아래 공식 도움말의 옵션 관련 항목을 같이 확인하세요.</p>
     <ul class="source-list">
+      <li><a href="https://help.sell.smartstore.naver.com/faq/content.help?faqId=3358">스마트스토어 고객센터: 옵션 등록 방식 안내</a></li>
+      <li><a href="https://help.sell.smartstore.naver.com/faq/content.help?faqId=3364">스마트스토어 고객센터: 옵션가 입력 제한 안내</a></li>
+      <li><a href="https://help.sell.smartstore.naver.com/faq/content.help?faqId=3378">스마트스토어 고객센터: 상품 이미지 등록 기준</a></li>
+      <li><a href="https://help.sell.smartstore.naver.com/faq/content.help?faqId=3565">스마트스토어 고객센터: 발송기한과 오늘출발 안내</a></li>
+      <li><a href="https://help.sell.smartstore.naver.com/faq/content.help?faqId=3853">스마트스토어 고객센터: 반품 귀책 사유 안내</a></li>
+      <li><a href="https://help.sell.smartstore.naver.com/faq/content.help?faqId=1245">스마트스토어 고객센터: 취급불가상품 안내</a></li>
       <li><a href="https://help.sell.smartstore.naver.com/faq/content.help?faqId=5305">스마트스토어 고객센터: 상품 등록 관련 자주 묻는 질문</a></li>
       <li><a href="https://help.sell.smartstore.naver.com/faq/content.help?faqId=15745">스마트스토어 고객센터: 상품 등록 기준 및 옵션 추가금 관련 안내</a></li>
     </ul>
