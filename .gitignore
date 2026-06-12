@@ -4,4 +4,5 @@ exports/*
 exports/options/*
 !exports/options/mealworm7th_smartstore_options.xlsx
 !exports/options/mealworm7th_price_table.png
+!exports/options/mealworm7th_product_option_plan.xlsx
 dist/

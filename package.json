@@ -6,6 +6,7 @@
     "build": "node tools/build-site.mjs",
     "export:options": "node tools/generate-smartstore-options-xlsx.mjs",
     "export:price-table": "node tools/generate-price-table-image.mjs",
+    "export:product-plan": "node tools/generate-product-option-plan-xlsx.mjs",
     "export:images": "node tools/export-smartstore-images.mjs",
     "export:integrated": "node tools/export-smartstore-images.mjs --page=00_integrated_naver_mobile"
   },
