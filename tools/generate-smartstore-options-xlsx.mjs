@@ -7,7 +7,8 @@ const outputPath = path.join(outputDir, "mealworm7th_smartstore_options.xlsx");
 let crcTable;
 
 const sizes = ["소", "중", "대"];
-const liveAmounts = ["500마리", "1000마리", "2000마리", "3000마리", "5000마리", "1kg"];
+const mealwormAmounts = ["1kg"];
+const superwormAmounts = ["500마리", "1000마리", "2000마리", "3000마리", "5000마리", "1kg"];
 const dryWeights = ["0.5kg", "1kg"];
 const baseSalePrice = 11000;
 const mealwormPrices = new Map([
@@ -31,16 +32,19 @@ const driedSuperwormPrices = new Map([
 ]);
 
 const rows = [
-  ...["밀웜", "슈퍼밀웜"].flatMap((category) => (
-    sizes.flatMap((size) => liveAmounts.map((amount) => {
-      const actualPrice = livePrice(category, amount);
+  ...[
+    { category: "밀웜", codePrefix: "MW", amounts: mealwormAmounts, prices: mealwormPrices },
+    { category: "슈퍼밀웜", codePrefix: "SW", amounts: superwormAmounts, prices: superwormPrices }
+  ].flatMap(({ category, codePrefix, amounts, prices }) => (
+    sizes.flatMap((size) => amounts.map((amount) => {
+      const actualPrice = prices.get(amount);
       return {
         choice1: category,
         choice2: size,
         choice3: amount,
         optionPrice: optionPrice(actualPrice),
-        use: actualPrice == null ? "N" : "Y",
-        code: `${category === "밀웜" ? "MW" : "SW"}-${romanizeSize(size)}-${romanizeAmount(amount)}`
+        use: "Y",
+        code: `${codePrefix}-${romanizeSize(size)}-${romanizeAmount(amount)}`
       };
     }))
   )),
@@ -96,13 +100,7 @@ function romanizeSize(size) {
   return ({ "소": "S", "중": "M", "대": "L" })[size] || size;
 }
 
-function livePrice(category, amount) {
-  if (category === "밀웜") return mealwormPrices.get(amount) ?? null;
-  return superwormPrices.get(amount);
-}
-
 function optionPrice(actualPrice) {
-  if (actualPrice == null) return 0;
   return actualPrice - baseSalePrice;
 }
 

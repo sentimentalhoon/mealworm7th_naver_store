@@ -1,5 +1,6 @@
 node_modules/
 exports/*
 !exports/options/
+exports/options/*
 !exports/options/mealworm7th_smartstore_options.xlsx
 dist/
