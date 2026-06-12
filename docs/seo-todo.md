@@ -16,11 +16,6 @@ This checklist tracks the remaining SEO hardening work for `https://mealworm7th.
 
 ## P1 - Improve Search Result Quality
 
-- [ ] Create a dedicated social preview image.
-  - Current state: `og:image` uses `assets/live_mealworm.jpg`.
-  - Target state: add a 1200x630-ish branded preview image that includes the 밀웜7번가 name and product context.
-  - Verification: `og:image` points to the new asset and renders clearly in link preview checks.
-
 - [ ] Add optional `lastmod` to `sitemap.xml`.
   - Current state: sitemap only contains the homepage URL.
   - Target state: sitemap includes a manually maintained `lastmod` date when homepage content changes.
@@ -45,6 +40,7 @@ This checklist tracks the remaining SEO hardening work for `https://mealworm7th.
 - [x] `robots.txt` allows crawlers to access `html/*` so page-level `noindex,nofollow` can be read.
 - [x] Naver Search Advisor verification meta tag is present.
 - [x] Homepage structured data includes official site URL, Smartstore URL, logo, representative images, seller contact data, address, and product category summary.
+- [x] Favicon, Apple touch icon, and dedicated 1200x630 social preview image are present and linked from the homepage.
 - [x] Homepage has a unique `<title>`.
 - [x] Homepage has a unique `<meta name="description">`.
 - [x] Homepage has canonical URL `https://mealworm7th.com/`.
