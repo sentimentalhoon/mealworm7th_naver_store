@@ -9,28 +9,63 @@ let crcTable;
 const sizes = ["소", "중", "대"];
 const liveAmounts = ["500마리", "1000마리", "2000마리", "3000마리", "5000마리", "1kg"];
 const dryWeights = ["0.5kg", "1kg"];
+const baseSalePrice = 11000;
+const mealwormPrices = new Map([
+  ["1kg", 13000]
+]);
+const superwormPrices = new Map([
+  ["500마리", 11000],
+  ["1000마리", 17000],
+  ["2000마리", 33000],
+  ["3000마리", 46000],
+  ["5000마리", 84000],
+  ["1kg", 20000]
+]);
+const driedMealwormPrices = new Map([
+  ["0.5kg", 19000],
+  ["1kg", 22000]
+]);
+const driedSuperwormPrices = new Map([
+  ["0.5kg", 22000],
+  ["1kg", 29000]
+]);
 
 const rows = [
   ...["밀웜", "슈퍼밀웜"].flatMap((category) => (
-    sizes.flatMap((size) => liveAmounts.map((amount) => ({
-      choice1: category,
-      choice2: size,
-      choice3: amount,
-      code: `${category === "밀웜" ? "MW" : "SW"}-${romanizeSize(size)}-${romanizeAmount(amount)}`
-    })))
+    sizes.flatMap((size) => liveAmounts.map((amount) => {
+      const actualPrice = livePrice(category, amount);
+      return {
+        choice1: category,
+        choice2: size,
+        choice3: amount,
+        optionPrice: optionPrice(actualPrice),
+        use: actualPrice == null ? "N" : "Y",
+        code: `${category === "밀웜" ? "MW" : "SW"}-${romanizeSize(size)}-${romanizeAmount(amount)}`
+      };
+    }))
   )),
-  ...dryWeights.map((weight) => ({
-    choice1: "건조밀웜",
-    choice2: weight,
-    choice3: "단일",
-    code: `DMW-${romanizeAmount(weight)}`
-  })),
-  ...dryWeights.map((weight) => ({
-    choice1: "건조슈퍼밀웜",
-    choice2: weight,
-    choice3: "단일",
-    code: `DSW-${romanizeAmount(weight)}`
-  }))
+  ...dryWeights.map((weight) => {
+    const actualPrice = driedMealwormPrices.get(weight);
+    return {
+      choice1: "건조밀웜",
+      choice2: weight,
+      choice3: "단일",
+      optionPrice: optionPrice(actualPrice),
+      use: "Y",
+      code: `DMW-${romanizeAmount(weight)}`
+    };
+  }),
+  ...dryWeights.map((weight) => {
+    const actualPrice = driedSuperwormPrices.get(weight);
+    return {
+      choice1: "건조슈퍼밀웜",
+      choice2: weight,
+      choice3: "단일",
+      optionPrice: optionPrice(actualPrice),
+      use: "Y",
+      code: `DSW-${romanizeAmount(weight)}`
+    };
+  })
 ];
 
 const workbook = createWorkbook([
@@ -42,10 +77,10 @@ const workbook = createWorkbook([
         row.choice1,
         row.choice2,
         row.choice3,
-        "",
+        row.optionPrice,
         "",
         row.code,
-        "Y"
+        row.use
       ])
     ]
   }
@@ -59,6 +94,16 @@ console.log(`Option rows: ${rows.length}`);
 
 function romanizeSize(size) {
   return ({ "소": "S", "중": "M", "대": "L" })[size] || size;
+}
+
+function livePrice(category, amount) {
+  if (category === "밀웜") return mealwormPrices.get(amount) ?? null;
+  return superwormPrices.get(amount);
+}
+
+function optionPrice(actualPrice) {
+  if (actualPrice == null) return 0;
+  return actualPrice - baseSalePrice;
 }
 
 function romanizeAmount(amount) {
@@ -160,6 +205,9 @@ function worksheetXml(rows) {
 
 function cellXml(rowIndex, columnIndex, value) {
   const ref = `${columnName(columnIndex)}${rowIndex}`;
+  if (typeof value === "number" && Number.isFinite(value)) {
+    return `<c r="${ref}"><v>${value}</v></c>`;
+  }
   const text = value == null ? "" : String(value);
   return `<c r="${ref}" t="inlineStr"><is><t>${escapeXml(text)}</t></is></c>`;
 }
