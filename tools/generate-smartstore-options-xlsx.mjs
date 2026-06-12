@@ -1,76 +1,13 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { buildSmartStoreOptionRows } from "./smartstore-pricing.mjs";
 
 const rootDir = process.cwd();
 const outputDir = path.join(rootDir, "exports", "options");
 const outputPath = path.join(outputDir, "mealworm7th_smartstore_options.xlsx");
 let crcTable;
 
-const sizes = ["소", "중", "대"];
-const mealwormAmounts = ["1kg"];
-const superwormAmounts = ["500마리", "1000마리", "2000마리", "3000마리", "5000마리", "1kg"];
-const dryWeights = ["0.5kg", "1kg"];
-const baseSalePrice = 11000;
-const mealwormPrices = new Map([
-  ["1kg", 13000]
-]);
-const superwormPrices = new Map([
-  ["500마리", 11000],
-  ["1000마리", 17000],
-  ["2000마리", 33000],
-  ["3000마리", 46000],
-  ["5000마리", 84000],
-  ["1kg", 20000]
-]);
-const driedMealwormPrices = new Map([
-  ["0.5kg", 19000],
-  ["1kg", 22000]
-]);
-const driedSuperwormPrices = new Map([
-  ["0.5kg", 22000],
-  ["1kg", 29000]
-]);
-
-const rows = [
-  ...[
-    { category: "밀웜", codePrefix: "MW", amounts: mealwormAmounts, prices: mealwormPrices },
-    { category: "슈퍼밀웜", codePrefix: "SW", amounts: superwormAmounts, prices: superwormPrices }
-  ].flatMap(({ category, codePrefix, amounts, prices }) => (
-    sizes.flatMap((size) => amounts.map((amount) => {
-      const actualPrice = prices.get(amount);
-      return {
-        choice1: category,
-        choice2: size,
-        choice3: amount,
-        optionPrice: optionPrice(actualPrice),
-        use: "Y",
-        code: `${codePrefix}-${romanizeSize(size)}-${romanizeAmount(amount)}`
-      };
-    }))
-  )),
-  ...dryWeights.map((weight) => {
-    const actualPrice = driedMealwormPrices.get(weight);
-    return {
-      choice1: "건조밀웜",
-      choice2: weight,
-      choice3: "단일",
-      optionPrice: optionPrice(actualPrice),
-      use: "Y",
-      code: `DMW-${romanizeAmount(weight)}`
-    };
-  }),
-  ...dryWeights.map((weight) => {
-    const actualPrice = driedSuperwormPrices.get(weight);
-    return {
-      choice1: "건조슈퍼밀웜",
-      choice2: weight,
-      choice3: "단일",
-      optionPrice: optionPrice(actualPrice),
-      use: "Y",
-      code: `DSW-${romanizeAmount(weight)}`
-    };
-  })
-];
+const rows = buildSmartStoreOptionRows();
 
 const workbook = createWorkbook([
   {
@@ -95,21 +32,6 @@ await writeFile(outputPath, workbook);
 
 console.log(`Generated ${path.relative(rootDir, outputPath)}`);
 console.log(`Option rows: ${rows.length}`);
-
-function romanizeSize(size) {
-  return ({ "소": "S", "중": "M", "대": "L" })[size] || size;
-}
-
-function optionPrice(actualPrice) {
-  return actualPrice - baseSalePrice;
-}
-
-function romanizeAmount(amount) {
-  return amount
-    .replace("마리", "")
-    .replace(".", "_")
-    .replace("kg", "KG");
-}
 
 function createWorkbook(sheets) {
   const files = new Map();

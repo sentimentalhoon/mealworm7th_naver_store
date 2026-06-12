@@ -100,7 +100,7 @@
         <p>밀웜은 <span class="mark key">1kg</span>만 입력하고, 슈퍼밀웜은 <span class="mark key">500마리~1kg</span>을 입력합니다. 건조 상품은 업로드 오류 방지를 위해 <span class="mark key">단일</span>을 입력합니다.</p>
       </div>
     </div>
-    <p class="manual-note">밀웜7번가 적용 전제: 통합 상품으로 운영하되, 고객 화면에서는 카테고리와 맞는 세부 옵션만 보이게 관리합니다. 현재 가격표는 기준 판매가 11,000원에서 옵션가를 더하는 방식으로 정리하며, 옵션가 제한을 넘는 조합이 있으면 통합 상품을 고집하지 말고 생물/건조 또는 밀웜/슈퍼밀웜 단위로 상품을 분리합니다.</p>
+    <p class="manual-note">밀웜7번가 적용 전제: 통합 상품으로 운영하되, 고객 화면에서는 카테고리와 맞는 세부 옵션만 보이게 관리합니다. 현재 가격표는 가장 많이 판매되는 생밀웜 1kg 가격 13,000원을 기준 판매가로 정리하며, 옵션가 제한을 넘는 조합은 통합 옵션 엑셀에 넣지 않고 별도 상품 또는 별도 옵션 구성으로 분리합니다.</p>
     <p class="manual-note">중요: 스마트스토어 옵션이 완전한 폴더형 메뉴처럼 보이지 않을 수 있습니다. 그래도 1차 옵션을 카테고리로, 2차 옵션을 크기·중량으로, 3차 옵션을 수량으로 만들면 구매 흐름은 “카테고리 선택 → 세부 상품 선택”에 가깝게 운영할 수 있습니다.</p>
   </section>
 
@@ -142,30 +142,30 @@
   <section class="manual manual-section" id="price-stock">
     <h2>4. 가격·재고 입력 방식</h2>
     <h3>기준 판매가를 먼저 정합니다</h3>
-    <p>스마트스토어 옵션가는 보통 상품의 기본 판매가에 옵션 추가금을 더하는 방식으로 운영합니다. 그래서 상품 등록 화면의 기본 판매가는 <span class="mark key">가장 낮은 정상 판매가</span> 또는 <span class="mark key">대표로 삼을 기준 상품 가격</span>으로 잡는 것이 관리하기 쉽습니다.</p>
+    <p>스마트스토어 옵션가는 보통 상품의 기본 판매가에 옵션 추가금을 더하는 방식으로 운영합니다. 이번 등록에서는 <span class="mark key">가장 많이 판매되는 생밀웜 1kg</span>을 대표 기준 상품으로 삼고, 기준 판매가는 <span class="mark key">13,000원</span>으로 둡니다.</p>
     <div class="manual-card">
       <h3>밀웜7번가 적용값</h3>
-      <p>기본 판매가는 현재 가장 낮은 정상 판매가인 <span class="mark key">11,000원</span>으로 잡습니다. 실제 판매가가 13,000원인 생밀웜 1kg 옵션의 옵션가는 +2,000원이고, 실제 판매가가 11,000원인 슈퍼밀웜 500마리 옵션의 옵션가는 0원입니다.</p>
+      <p>기본 판매가는 <span class="mark key">13,000원</span>입니다. 실제 판매가가 13,000원인 생밀웜 1kg 옵션의 옵션가는 0원이고, 11,000원인 슈퍼밀웜 500마리 옵션의 옵션가는 -2,000원입니다. 판매가 13,000원 기준 허용 범위는 <span class="mark key">-6,500원~+6,500원</span>입니다.</p>
     </div>
     <div class="manual-table">
       <table>
-        <thead><tr><th>상품</th><th>옵션 기준</th><th>실제 판매가</th><th>옵션가</th></tr></thead>
+        <thead><tr><th>상품</th><th>옵션 기준</th><th>실제 판매가</th><th>옵션가</th><th>처리</th></tr></thead>
         <tbody>
-          <tr><td data-label="상품">생밀웜</td><td data-label="옵션 기준">1kg / 소,중,대</td><td data-label="실제 판매가">13,000원</td><td data-label="옵션가">+2,000원</td></tr>
-          <tr><td data-label="상품">슈퍼밀웜</td><td data-label="옵션 기준">마리수형 / 소,중,대 / 500마리</td><td data-label="실제 판매가">11,000원</td><td data-label="옵션가">0원</td></tr>
-          <tr><td data-label="상품">슈퍼밀웜</td><td data-label="옵션 기준">마리수형 / 소,중,대 / 1,000마리</td><td data-label="실제 판매가">17,000원</td><td data-label="옵션가">+6,000원</td></tr>
-          <tr><td data-label="상품">슈퍼밀웜</td><td data-label="옵션 기준">마리수형 / 소,중,대 / 2,000마리</td><td data-label="실제 판매가">33,000원</td><td data-label="옵션가">+22,000원</td></tr>
-          <tr><td data-label="상품">슈퍼밀웜</td><td data-label="옵션 기준">마리수형 / 소,중,대 / 3,000마리</td><td data-label="실제 판매가">46,000원</td><td data-label="옵션가">+35,000원</td></tr>
-          <tr><td data-label="상품">슈퍼밀웜</td><td data-label="옵션 기준">마리수형 / 소,중,대 / 5,000마리</td><td data-label="실제 판매가">84,000원</td><td data-label="옵션가">+73,000원</td></tr>
-          <tr><td data-label="상품">슈퍼밀웜</td><td data-label="옵션 기준">1kg / 소,중,대</td><td data-label="실제 판매가">20,000원</td><td data-label="옵션가">+9,000원</td></tr>
-          <tr><td data-label="상품">건조밀웜</td><td data-label="옵션 기준">0.5kg</td><td data-label="실제 판매가">19,000원</td><td data-label="옵션가">+8,000원</td></tr>
-          <tr><td data-label="상품">건조밀웜</td><td data-label="옵션 기준">1.0kg</td><td data-label="실제 판매가">22,000원</td><td data-label="옵션가">+11,000원</td></tr>
-          <tr><td data-label="상품">건조슈퍼밀웜</td><td data-label="옵션 기준">0.5kg</td><td data-label="실제 판매가">22,000원</td><td data-label="옵션가">+11,000원</td></tr>
-          <tr><td data-label="상품">건조슈퍼밀웜</td><td data-label="옵션 기준">1.0kg</td><td data-label="실제 판매가">29,000원</td><td data-label="옵션가">+18,000원</td></tr>
+          <tr><td data-label="상품">생밀웜</td><td data-label="옵션 기준">1kg / 소,중,대</td><td data-label="실제 판매가">13,000원</td><td data-label="옵션가">0원</td><td data-label="처리">엑셀 포함</td></tr>
+          <tr><td data-label="상품">슈퍼밀웜</td><td data-label="옵션 기준">마리수형 / 소,중,대 / 500마리</td><td data-label="실제 판매가">11,000원</td><td data-label="옵션가">-2,000원</td><td data-label="처리">엑셀 포함</td></tr>
+          <tr><td data-label="상품">슈퍼밀웜</td><td data-label="옵션 기준">마리수형 / 소,중,대 / 1,000마리</td><td data-label="실제 판매가">17,000원</td><td data-label="옵션가">+4,000원</td><td data-label="처리">엑셀 포함</td></tr>
+          <tr><td data-label="상품">슈퍼밀웜</td><td data-label="옵션 기준">마리수형 / 소,중,대 / 2,000마리</td><td data-label="실제 판매가">33,000원</td><td data-label="옵션가">+20,000원</td><td data-label="처리">별도 상품 권장</td></tr>
+          <tr><td data-label="상품">슈퍼밀웜</td><td data-label="옵션 기준">마리수형 / 소,중,대 / 3,000마리</td><td data-label="실제 판매가">46,000원</td><td data-label="옵션가">+33,000원</td><td data-label="처리">별도 상품 권장</td></tr>
+          <tr><td data-label="상품">슈퍼밀웜</td><td data-label="옵션 기준">마리수형 / 소,중,대 / 5,000마리</td><td data-label="실제 판매가">84,000원</td><td data-label="옵션가">+71,000원</td><td data-label="처리">별도 상품 권장</td></tr>
+          <tr><td data-label="상품">슈퍼밀웜</td><td data-label="옵션 기준">1kg / 소,중,대</td><td data-label="실제 판매가">20,000원</td><td data-label="옵션가">+7,000원</td><td data-label="처리">별도 상품 권장</td></tr>
+          <tr><td data-label="상품">건조밀웜</td><td data-label="옵션 기준">0.5kg</td><td data-label="실제 판매가">19,000원</td><td data-label="옵션가">+6,000원</td><td data-label="처리">엑셀 포함</td></tr>
+          <tr><td data-label="상품">건조밀웜</td><td data-label="옵션 기준">1.0kg</td><td data-label="실제 판매가">22,000원</td><td data-label="옵션가">+9,000원</td><td data-label="처리">별도 상품 권장</td></tr>
+          <tr><td data-label="상품">건조슈퍼밀웜</td><td data-label="옵션 기준">0.5kg</td><td data-label="실제 판매가">22,000원</td><td data-label="옵션가">+9,000원</td><td data-label="처리">별도 상품 권장</td></tr>
+          <tr><td data-label="상품">건조슈퍼밀웜</td><td data-label="옵션 기준">1.0kg</td><td data-label="실제 판매가">29,000원</td><td data-label="옵션가">+16,000원</td><td data-label="처리">별도 상품 권장</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="manual-note">생밀웜은 소, 중, 대 크기별 1kg 상품만 판매합니다. 엑셀에서도 밀웜은 1kg 조합 3행만 만듭니다.</p>
+    <p class="manual-note">현재 통합 옵션 엑셀에는 생밀웜 1kg 3행, 슈퍼밀웜 500마리 3행, 슈퍼밀웜 1000마리 3행, 건조밀웜 0.5kg 1행만 포함합니다.</p>
     <h3>재고는 옵션 조합별로 관리합니다</h3>
     <ul>
       <li>생물 상품은 크기와 판매 단위별 재고가 달라질 수 있으므로 <span class="mark good">옵션별 재고</span>를 반드시 입력합니다.</li>
@@ -198,33 +198,33 @@
         </ul>
       </div>
     </div>
-    <p class="manual-note manual-danger">현재 가격표 기준 최고 옵션가는 +73,000원입니다. 저장 전 네이버 옵션가 제한 안내를 확인하고, 제한을 넘는 경우 상품을 분리하거나 기본 판매가를 다시 정합니다.</p>
+    <p class="manual-note manual-danger">현재 기준 판매가 13,000원에서 허용 옵션가는 -6,500원~+6,500원입니다. 이 범위를 넘는 옵션은 통합 옵션 엑셀에 넣지 않고 별도 상품 또는 별도 옵션 구성으로 분리합니다.</p>
   </section>
 
   <section class="manual manual-section" id="cleanup">
     <h2>6. 조합 생성 후 반드시 정리할 것</h2>
-    <p>3단계 조합형으로 만들면 카테고리, 크기·중량, 수량을 조합별로 관리할 수 있습니다. 엑셀 업로드 방식에서는 아래 정상 조합만 만들고, 카테고리와 맞지 않는 조합은 만들지 않습니다.</p>
+    <p>3단계 조합형으로 만들면 카테고리, 크기·중량, 수량을 조합별로 관리할 수 있습니다. 엑셀 업로드 방식에서는 옵션가 허용 범위 안의 조합만 만들고, 범위를 넘는 조합은 별도 상품 또는 별도 옵션 구성으로 분리합니다.</p>
     <div class="manual-image">
       <img src="../assets/option-combination-grid.svg" alt="옵션 조합 중 정상 조합과 미노출 처리할 조합 예시">
     </div>
     <div class="manual-grid">
       <div class="manual-card">
-        <h3>남겨야 하는 조합</h3>
+        <h3>엑셀에 포함할 조합</h3>
         <ul>
           <li>밀웜 + 소 + 1kg</li>
+          <li>밀웜 + 대 + 1kg</li>
+          <li>슈퍼밀웜 + 소 + 500마리</li>
           <li>슈퍼밀웜 + 중 + 1000마리</li>
-          <li>슈퍼밀웜 + 대 + 1kg</li>
-          <li>건조 밀웜 + 1kg + 단일</li>
-          <li>건조슈퍼밀웜 + 0.5kg + 단일</li>
+          <li>건조 밀웜 + 0.5kg + 단일</li>
         </ul>
       </div>
       <div class="manual-card">
-        <h3>만들지 않을 조합</h3>
+        <h3>별도 상품 권장 조합</h3>
         <ul>
-          <li>건조 밀웜 + 소 + 1kg</li>
-          <li>건조슈퍼밀웜 + 대 + 1kg</li>
-          <li>밀웜 + 0.5kg + 단일</li>
-          <li>슈퍼밀웜 + 0.5kg + 단일</li>
+          <li>슈퍼밀웜 + 대 + 1kg</li>
+          <li>슈퍼밀웜 + 중 + 5000마리</li>
+          <li>건조 밀웜 + 1kg + 단일</li>
+          <li>건조슈퍼밀웜 + 0.5kg + 단일</li>
         </ul>
       </div>
     </div>

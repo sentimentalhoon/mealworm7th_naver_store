@@ -3,4 +3,5 @@ exports/*
 !exports/options/
 exports/options/*
 !exports/options/mealworm7th_smartstore_options.xlsx
+!exports/options/mealworm7th_price_table.png
 dist/
