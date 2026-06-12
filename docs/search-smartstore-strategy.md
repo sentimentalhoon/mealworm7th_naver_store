@@ -66,7 +66,7 @@ Avoid misleading labels such as:
 
 ## Future Implementation Checklist
 
-- Replace the `SMARTSTORE_URL` placeholder in `index.html` when the representative Smartstore URL is final.
+- Keep the representative Smartstore URL set to `https://smartstore.naver.com/mealworm7th` unless the store URL changes.
 - Keep crawlable homepage content current for brand, product categories, and purchase path.
 - Keep homepage metadata, `robots.txt`, and `sitemap.xml` aligned with the deployed domain.
 - Keep canonical handling focused on the homepage unless public product pages are added.

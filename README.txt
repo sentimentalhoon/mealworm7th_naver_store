@@ -4,7 +4,7 @@
 - mealworm7th.com의 index.html은 검색 유입용 밀웜7번가 공식 브랜드 허브입니다.
 - 루트 화면은 생밀웜, 슈퍼밀웜, 건조밀웜, 건조슈퍼밀웜 상품 안내와 네이버 스마트스토어 구매 경로를 제공합니다.
 - 실제 주문과 결제는 네이버 스마트스토어에서 진행합니다.
-- 스마트스토어 대표 URL이 확정되면 index.html 하단 스크립트의 SMARTSTORE_URL 값을 실제 URL로 교체하세요.
+- 스마트스토어 대표 URL은 https://smartstore.naver.com/mealworm7th 입니다.
 - html/ 폴더의 상세페이지는 네이버 스마트스토어 업로드 원본입니다. 공개 검색 노출은 홈으로 집중하기 위해 noindex,nofollow 메타를 포함합니다.
 - robots.txt는 /html/ 수집을 제외하고, sitemap.xml은 우선 https://mealworm7th.com/ 홈만 포함합니다.
 
