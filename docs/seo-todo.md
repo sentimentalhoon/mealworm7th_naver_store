@@ -4,12 +4,6 @@ This checklist tracks the remaining SEO hardening work for `https://mealworm7th.
 
 ## P0 - Fix Before Search Console Submission
 
-- [ ] Reconcile `robots.txt` and `noindex` for `html/*`.
-  - Current state: `html/*` pages contain `<meta name="robots" content="noindex,nofollow">`, but `robots.txt` also disallows `/html/`.
-  - Risk: if crawlers cannot access `/html/`, they may not be able to read the `noindex` directive if those URLs are discovered elsewhere.
-  - Target state: allow crawling of `/html/` in `robots.txt` and rely on page-level `noindex,nofollow` to keep Smartstore source pages out of search results.
-  - Verification: `robots.txt` no longer has `Disallow: /html/`; all files under `html/*.html` still include `noindex,nofollow`; `sitemap.xml` still lists only `https://mealworm7th.com/`.
-
 - [ ] Add Search Console and Naver Search Advisor ownership verification.
   - Current state: no verification meta tags or verification files are present.
   - Target state: Google and Naver ownership verification is present using either provider-issued HTML files or meta tags.
@@ -53,6 +47,7 @@ This checklist tracks the remaining SEO hardening work for `https://mealworm7th.
 
 ## Completed Baseline
 
+- [x] `robots.txt` allows crawlers to access `html/*` so page-level `noindex,nofollow` can be read.
 - [x] Homepage has a unique `<title>`.
 - [x] Homepage has a unique `<meta name="description">`.
 - [x] Homepage has canonical URL `https://mealworm7th.com/`.

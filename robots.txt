@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /html/
 
 Sitemap: https://mealworm7th.com/sitemap.xml
