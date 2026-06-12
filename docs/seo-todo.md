@@ -2,18 +2,6 @@
 
 This checklist tracks the remaining SEO hardening work for `https://mealworm7th.com/`.
 
-## P0 - Fix Before Search Console Submission
-
-- [ ] Confirm Google Search Console ownership verification through Cloudflare.
-  - Current state: Naver verification is present in code; Google verification is expected to be handled outside the repo through Cloudflare/DNS.
-  - Target state: Google Search Console shows `https://mealworm7th.com/` or the domain property as verified.
-  - Verification: provider verification succeeds in Google Search Console; no repo meta tag or HTML verification file is required when Cloudflare/DNS verification is used.
-
-- [ ] Submit `sitemap.xml` after deployment.
-  - Current state: `sitemap.xml` exists and lists the homepage.
-  - Target state: Google Search Console and Naver Search Advisor both know `https://mealworm7th.com/sitemap.xml`.
-  - Verification: sitemap submission is accepted; no blocked-homepage or invalid-sitemap errors are reported.
-
 ## P1 - Improve Search Result Quality
 
 - [ ] Add optional `lastmod` to `sitemap.xml`.
@@ -37,6 +25,8 @@ This checklist tracks the remaining SEO hardening work for `https://mealworm7th.
 
 ## Completed Baseline
 
+- [x] Google Search Console ownership verification is complete through Cloudflare/DNS.
+- [x] `https://mealworm7th.com/sitemap.xml` has been submitted in Google Search Console and Naver Search Advisor.
 - [x] `robots.txt` allows crawlers to access `html/*` so page-level `noindex,nofollow` can be read.
 - [x] Naver Search Advisor verification meta tag is present.
 - [x] Homepage structured data includes official site URL, Smartstore URL, logo, representative images, seller contact data, address, and product category summary.
