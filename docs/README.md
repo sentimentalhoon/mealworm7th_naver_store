@@ -6,6 +6,7 @@ Documentation for the 밀웜7번가 website and Smartstore asset project lives h
 
 - `project-purpose.md`: why this site exists, who it serves, and what success means.
 - `search-smartstore-strategy.md`: how to connect search traffic to the Naver Smartstore without becoming a thin redirect site.
+- `seo-todo.md`: prioritized SEO hardening checklist and acceptance criteria.
 
 Root-level navigation:
 
