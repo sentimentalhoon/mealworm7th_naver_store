@@ -24,6 +24,13 @@ The first viewport of the public website should communicate:
 
 Do not use an empty hero, abstract illustration, or vague slogan as the main content.
 
+## Public Homepage Format
+
+- The public homepage is designed as a single 840px mobile-first screen.
+- On desktop, keep the same 840px layout centered instead of expanding into a separate desktop composition.
+- Keep a sticky Smartstore purchase button visible at the bottom of the viewport.
+- Do not create separate desktop-only grids or split hero layouts for the public homepage unless this rule is intentionally changed.
+
 ## Layout
 
 - Prefer a simple static layout with clear product sections and policy sections.
