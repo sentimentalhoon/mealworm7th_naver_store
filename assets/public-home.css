@@ -65,11 +65,20 @@ main,
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: var(--green-dark);
   font-size: 18px;
   font-weight: 900;
   text-decoration: none;
   white-space: nowrap;
+}
+
+.brand img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
 }
 
 .nav {
@@ -413,6 +422,43 @@ figcaption {
   opacity: .88;
 }
 
+.seller-section {
+  background: #fbfcfa;
+}
+
+.seller-grid {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.seller-grid div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 13px 14px;
+}
+
+.seller-grid dt {
+  margin-bottom: 5px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.seller-grid dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.55;
+}
+
+.seller-grid a {
+  color: var(--green-dark);
+  text-decoration: none;
+}
+
 .site-footer {
   padding: 28px 16px 34px;
   border-top: 1px solid var(--line);
@@ -475,8 +521,13 @@ figcaption {
   .quick-facts,
   .notice-row,
   .compare-grid,
-  .faq-grid {
+  .faq-grid,
+  .seller-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .seller-grid .wide {
+    grid-column: 1 / -1;
   }
 
   .section {
