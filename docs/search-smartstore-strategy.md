@@ -26,6 +26,9 @@ Each indexable page should include at least one meaningful value beyond a Smarts
 - Product pages may link to the matching Smartstore listing when the URL is known.
 - The homepage should link to product information first, then provide a Smartstore purchase path.
 - If a temporary redirect is ever needed for operations, document the reason and expected removal date.
+- `index.html` is the public search landing page for `https://mealworm7th.com/`.
+- Existing `html/*` files are Smartstore upload sources and should keep `noindex,nofollow`.
+- `robots.txt` excludes `/html/` from crawling, while `sitemap.xml` lists only the homepage until public product pages are intentionally created.
 
 ## Google And Naver Basics
 
@@ -63,11 +66,10 @@ Avoid misleading labels such as:
 
 ## Future Implementation Checklist
 
-- Add crawlable homepage content for brand, product categories, and purchase path.
-- Add or verify metadata for public pages.
-- Add `robots.txt`.
-- Add `sitemap.xml`.
-- Add canonical handling for query variants such as `?w=840`.
+- Replace the `SMARTSTORE_URL` placeholder in `index.html` when the representative Smartstore URL is final.
+- Keep crawlable homepage content current for brand, product categories, and purchase path.
+- Keep homepage metadata, `robots.txt`, and `sitemap.xml` aligned with the deployed domain.
+- Keep canonical handling focused on the homepage unless public product pages are added.
 - Register and verify the domain in Google Search Console.
 - Register and verify the domain in Naver Search Advisor.
 - Submit sitemap after the public URLs are final.
