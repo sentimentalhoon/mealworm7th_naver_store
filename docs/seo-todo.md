@@ -4,10 +4,10 @@ This checklist tracks the remaining SEO hardening work for `https://mealworm7th.
 
 ## P0 - Fix Before Search Console Submission
 
-- [ ] Add Google Search Console ownership verification.
-  - Current state: Naver verification is present, but Google verification has not been provided yet.
-  - Target state: Google ownership verification is present using either a provider-issued HTML file or meta tag.
-  - Verification: provider verification succeeds in Google Search Console.
+- [ ] Confirm Google Search Console ownership verification through Cloudflare.
+  - Current state: Naver verification is present in code; Google verification is expected to be handled outside the repo through Cloudflare/DNS.
+  - Target state: Google Search Console shows `https://mealworm7th.com/` or the domain property as verified.
+  - Verification: provider verification succeeds in Google Search Console; no repo meta tag or HTML verification file is required when Cloudflare/DNS verification is used.
 
 - [ ] Submit `sitemap.xml` after deployment.
   - Current state: `sitemap.xml` exists and lists the homepage.
