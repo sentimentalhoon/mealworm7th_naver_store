@@ -27,102 +27,104 @@ colors:
   on-dark: "#ffffff"
 
 typography:
+  korean-font-stack: &korean-font-stack '"Pretendard Variable", Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif'
+  latin-display-stack: &latin-display-stack '"SF Pro Display", system-ui, -apple-system, sans-serif'
   hero-display:
-    fontFamily: "SF Pro Display, system-ui, -apple-system, sans-serif"
+    fontFamily: *korean-font-stack
     fontSize: 56px
-    fontWeight: 600
-    lineHeight: 1.07
-    letterSpacing: -0.28px
+    fontWeight: 700
+    lineHeight: 1.18
+    letterSpacing: -0.03em
   display-lg:
-    fontFamily: "SF Pro Display, system-ui, -apple-system, sans-serif"
+    fontFamily: *korean-font-stack
     fontSize: 40px
-    fontWeight: 600
-    lineHeight: 1.1
-    letterSpacing: 0
+    fontWeight: 700
+    lineHeight: 1.28
+    letterSpacing: -0.025em
   display-md:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
+    fontFamily: *korean-font-stack
     fontSize: 34px
-    fontWeight: 600
-    lineHeight: 1.47
-    letterSpacing: -0.374px
+    fontWeight: 700
+    lineHeight: 1.35
+    letterSpacing: -0.02em
   lead:
-    fontFamily: "SF Pro Display, system-ui, -apple-system, sans-serif"
-    fontSize: 28px
+    fontFamily: *korean-font-stack
+    fontSize: 21px
     fontWeight: 400
-    lineHeight: 1.14
-    letterSpacing: 0.196px
+    lineHeight: 1.65
+    letterSpacing: -0.01em
   lead-airy:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
-    fontSize: 24px
-    fontWeight: 300
-    lineHeight: 1.5
-    letterSpacing: 0
+    fontFamily: *korean-font-stack
+    fontSize: 21px
+    fontWeight: 400
+    lineHeight: 1.7
+    letterSpacing: -0.01em
   tagline:
-    fontFamily: "SF Pro Display, system-ui, -apple-system, sans-serif"
+    fontFamily: *korean-font-stack
     fontSize: 21px
     fontWeight: 600
-    lineHeight: 1.19
-    letterSpacing: 0.231px
+    lineHeight: 1.35
+    letterSpacing: -0.015em
   body-strong:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
+    fontFamily: *korean-font-stack
     fontSize: 17px
     fontWeight: 600
-    lineHeight: 1.24
-    letterSpacing: -0.374px
+    lineHeight: 1.7
+    letterSpacing: -0.01em
   body:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
+    fontFamily: *korean-font-stack
     fontSize: 17px
     fontWeight: 400
-    lineHeight: 1.47
-    letterSpacing: -0.374px
+    lineHeight: 1.7
+    letterSpacing: -0.01em
   dense-link:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
-    fontSize: 17px
+    fontFamily: *korean-font-stack
+    fontSize: 16px
     fontWeight: 400
-    lineHeight: 2.41
+    lineHeight: 1.9
     letterSpacing: 0
   caption:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
-    fontSize: 14px
+    fontFamily: *korean-font-stack
+    fontSize: 13px
     fontWeight: 400
-    lineHeight: 1.43
-    letterSpacing: -0.224px
+    lineHeight: 1.65
+    letterSpacing: 0
   caption-strong:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
+    fontFamily: *korean-font-stack
+    fontSize: 13px
+    fontWeight: 600
+    lineHeight: 1.5
+    letterSpacing: 0
+  button-large:
+    fontFamily: *korean-font-stack
+    fontSize: 17px
+    fontWeight: 600
+    lineHeight: 1.4
+    letterSpacing: -0.01em
+  button-utility:
+    fontFamily: *korean-font-stack
     fontSize: 14px
     fontWeight: 600
-    lineHeight: 1.29
-    letterSpacing: -0.224px
-  button-large:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
-    fontSize: 18px
-    fontWeight: 300
-    lineHeight: 1.0
-    letterSpacing: 0
-  button-utility:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
-    fontSize: 14px
-    fontWeight: 400
-    lineHeight: 1.29
-    letterSpacing: -0.224px
+    lineHeight: 1.4
+    letterSpacing: -0.01em
   fine-print:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
+    fontFamily: *korean-font-stack
     fontSize: 12px
     fontWeight: 400
-    lineHeight: 1.0
-    letterSpacing: -0.12px
+    lineHeight: 1.65
+    letterSpacing: 0
   micro-legal:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
-    fontSize: 10px
+    fontFamily: *korean-font-stack
+    fontSize: 11px
     fontWeight: 400
-    lineHeight: 1.3
-    letterSpacing: -0.08px
+    lineHeight: 1.65
+    letterSpacing: 0
   nav-link:
-    fontFamily: "SF Pro Text, system-ui, -apple-system, sans-serif"
-    fontSize: 12px
-    fontWeight: 400
-    lineHeight: 1.0
-    letterSpacing: -0.12px
+    fontFamily: *korean-font-stack
+    fontSize: 13px
+    fontWeight: 600
+    lineHeight: 1.4
+    letterSpacing: -0.01em
 
 rounded:
   none: 0px
@@ -286,10 +288,57 @@ Store and shop surfaces retain the same chassis but switch modes. The product co
 - Alternating full-bleed tile sections: white/parchment ↔ near-black, with the color change itself acting as the section divider.
 - Single blue accent (`{colors.primary}` — #0066cc) carries every interactive element. No second brand color exists.
 - Two button grammars: tiny blue pill CTAs (`{rounded.pill}`) and compact utility rects (`{rounded.sm}`).
-- SF Pro Display + SF Pro Text — negative letter-spacing at display sizes for the signature "Apple tight" headline feel.
+- Korean-first Pretendard/Noto Sans KR stack with restrained tracking; SF Pro remains a Latin-only fallback.
 - Whisper-soft elevation used only when a product image needs to breathe — exactly one drop-shadow in the entire system.
 - Tight two-row nav: slim `{component.global-nav}` + product-specific `{component.sub-nav-frosted}` with persistent right-aligned primary CTA.
 - Section rhythm across multiple pages: light hero → dark product tile → light utility tile → dark tile → parchment footer — a predictable pulse.
+
+## Korean-First Application Rules
+
+> **Normative override for 밀웜7번가:** The source analysis is based on English-language Apple surfaces, but the public site is Korean-first. When the original SF Pro guidance conflicts with Korean legibility, the rules in this section take precedence.
+
+### Font and weight
+
+- Use `"Pretendard Variable", Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif` for Korean display, body, UI, and legal text. SF Pro may remain only as a Latin fallback; it must not be the primary face for a Korean sentence.
+- Keep the original weight ladder of 400 / 600 / 700. Korean display text uses 700 only when it must carry the full hero; body text remains 400 and supporting labels use 600. Avoid 300 for Korean because thin Hangul strokes lose clarity on mobile displays.
+- Use tabular numerals (`font-variant-numeric: tabular-nums`) for prices, weights, times, telephone numbers, and business registration numbers.
+
+### Size, leading, and tracking
+
+| Role | Desktop | Mobile | Weight | Line height | Letter spacing |
+|---|---:|---:|---:|---:|---:|
+| Korean hero | 56px | 38px | 700 | 1.18 | -0.03em |
+| Korean section title | 40px | 30px | 700 | 1.28 | -0.025em |
+| Korean card title | 24px | 22px | 600 | 1.35 | -0.015em |
+| Korean lead | 21px | 18px | 400 | 1.65 | -0.01em |
+| Korean body | 17px | 16px | 400 | 1.7 | -0.01em |
+| Korean caption/legal | 13px | 12px | 400 | 1.65 | 0 |
+
+- Do not copy the English display line-height of 1.07 onto Hangul. Korean headlines require at least 1.18 so adjacent rows do not visually collide.
+- Negative tracking is capped at `-0.03em` for Korean display text and `-0.01em` for Korean body text. Never reuse a fixed negative pixel value from an English token across a mixed Korean/Latin sentence.
+- Keep body lines between 32 and 42 Korean characters on desktop where practical. Editorial explanations use a maximum measure of `42rem`; legal and seller information may run wider when structured as fields.
+
+### Line breaking and copy
+
+- Set Korean prose to `word-break: keep-all` so syllable blocks do not break arbitrarily, then add `overflow-wrap: anywhere` as the safety valve for URLs, email addresses, order numbers, and long unspaced strings.
+- Use `text-wrap: balance` only on headings and short lead copy. Do not balance paragraphs, lists, addresses, or legal text.
+- Prefer short noun phrases for navigation and buttons. A Korean primary CTA should usually fit within 8 to 16 characters; if the purchase channel must be explicit, `네이버에서 구매하기` is preferred over a sentence-length label.
+- Avoid forced `<br>` elements as layout controls. Let the available width determine line breaks unless a phrase boundary is essential to meaning.
+- Keep Korean as the visible primary label. Short English labels may be used as quiet eyebrows only when they aid category recognition; they must not replace the Korean section title.
+
+### Korean UI density and alignment
+
+- Korean buttons need at least 14px horizontal breathing room per side and a 44px minimum touch target. Do not squeeze longer Korean labels into compact English-sized controls; shorten the copy before reducing type.
+- Align Korean body copy and data lists to the left. Center alignment is reserved for a hero headline, a short lead, or a single CTA group of no more than three lines.
+- Use punctuation consistently: Korean sentences end with a period, slash-separated option labels include spaces (`소 / 중 / 대`), and units stay attached to numerals (`1kg`, `3,000원`, `오후 2시`).
+- On screens below 640px, convert multi-column information to a single reading order. Preserve heading → explanation → action → supporting data; do not place a long Korean explanation beside a narrow image.
+
+### Accessibility and fallback
+
+- Maintain a minimum 4.5:1 contrast ratio for Korean body text and 3:1 for large display text. Muted gray must remain dark enough for thin Hangul strokes.
+- Declare `<html lang="ko">` and retain meaningful Korean alternative text for product and packing photography.
+- If neither Pretendard nor Noto Sans KR is available, system UI fonts must still produce the same size and line-height rhythm without clipping. Never depend on a remote webfont for first render.
+- Focus indicators are always visible and may use `{colors.primary-focus}`. Active press feedback uses the shared `scale(0.95)` interaction, with animation disabled under `prefers-reduced-motion`.
 
 ## Colors
 
@@ -328,47 +377,46 @@ Store and shop surfaces retain the same chassis but switch modes. The product co
 ## Typography
 
 ### Font Family
-- **Display**: `SF Pro Display, system-ui, -apple-system, sans-serif` — Apple's proprietary display face, optimized for sizes ≥ 19px. Defines the voice of every headline.
-- **Body / UI**: `SF Pro Text, system-ui, -apple-system, sans-serif` — the text-optimized variant used for body copy, captions, buttons, and links below 20px.
-- **OpenType features**: `font-variant-numeric: numerator` is enabled on numeric links (pricing tables, spec sheets). Display sizes rely on tight tracking rather than contextual ligatures.
+- **Korean display**: `"Pretendard Variable", Pretendard, "Noto Sans KR", "Apple SD Gothic Neo", system-ui, sans-serif` — the primary headline stack for 밀웜7번가. Use the Korean line-height and tracking overrides above.
+- **Korean body / UI**: the same Korean-first stack for body copy, captions, buttons, and links. A consistent Hangul skeleton is more important than reproducing the source site's English font split.
+- **Latin fallback**: `SF Pro Display, SF Pro Text, system-ui, -apple-system, sans-serif` may be used for Latin-only labels and numerals when available.
+- **OpenType features**: `font-variant-numeric: tabular-nums` is enabled for prices, weights, times, telephone numbers, and registration numbers.
 
 ### Hierarchy
 
 | Token | Size | Weight | Line Height | Letter Spacing | Use |
 |---|---|---|---|---|---|
-| `{typography.hero-display}` | 56px | 600 | 1.07 | -0.28px | Hero headline; the signature "Apple tight" tracking |
-| `{typography.display-lg}` | 40px | 600 | 1.10 | 0 | Tile headlines atop every product tile |
-| `{typography.display-md}` | 34px | 600 | 1.47 | -0.374px | Section heads (SF Pro Text at display proportions) |
-| `{typography.lead}` | 28px | 400 | 1.14 | 0.196px | Product tile subcopy |
-| `{typography.lead-airy}` | 24px | 300 | 1.5 | 0 | Environment-page lead paragraphs (the rare weight 300) |
-| `{typography.tagline}` | 21px | 600 | 1.19 | 0.231px | Sub-tile tagline; sub-nav category name |
-| `{typography.body-strong}` | 17px | 600 | 1.24 | -0.374px | Inline strong emphasis |
-| `{typography.body}` | 17px | 400 | 1.47 | -0.374px | Default paragraph |
-| `{typography.dense-link}` | 17px | 400 | 2.41 | 0 | Footer / store utility link lists (relaxed leading) |
-| `{typography.caption}` | 14px | 400 | 1.43 | -0.224px | Secondary captions, button text |
-| `{typography.caption-strong}` | 14px | 600 | 1.29 | -0.224px | Emphasized captions |
-| `{typography.button-large}` | 18px | 300 | 1.0 | 0 | Store hero CTAs (the rare weight 300) |
-| `{typography.button-utility}` | 14px | 400 | 1.29 | -0.224px | Utility/nav button labels |
-| `{typography.fine-print}` | 12px | 400 | 1.0 | -0.12px | Fine-print, footer body |
-| `{typography.micro-legal}` | 10px | 400 | 1.3 | -0.08px | Micro legal disclaimers |
-| `{typography.nav-link}` | 12px | 400 | 1.0 | -0.12px | Global nav menu items |
+| `{typography.hero-display}` | 56px | 700 | 1.18 | -0.03em | Korean hero headline |
+| `{typography.display-lg}` | 40px | 700 | 1.28 | -0.025em | Product tile and section headlines |
+| `{typography.display-md}` | 34px | 700 | 1.35 | -0.02em | Compact section headlines |
+| `{typography.lead}` | 21px | 400 | 1.65 | -0.01em | Product tile subcopy |
+| `{typography.lead-airy}` | 21px | 400 | 1.7 | -0.01em | Editorial lead paragraphs |
+| `{typography.tagline}` | 21px | 600 | 1.35 | -0.015em | Sub-tile tagline; sub-nav category name |
+| `{typography.body-strong}` | 17px | 600 | 1.7 | -0.01em | Inline strong emphasis |
+| `{typography.body}` | 17px | 400 | 1.7 | -0.01em | Default Korean paragraph |
+| `{typography.dense-link}` | 16px | 400 | 1.9 | 0 | Footer / store utility link lists |
+| `{typography.caption}` | 13px | 400 | 1.65 | 0 | Secondary captions |
+| `{typography.caption-strong}` | 13px | 600 | 1.5 | 0 | Emphasized captions |
+| `{typography.button-large}` | 17px | 600 | 1.4 | -0.01em | Store hero CTAs |
+| `{typography.button-utility}` | 14px | 600 | 1.4 | -0.01em | Utility/nav button labels |
+| `{typography.fine-print}` | 12px | 400 | 1.65 | 0 | Fine-print, footer body |
+| `{typography.micro-legal}` | 11px | 400 | 1.65 | 0 | Micro legal disclaimers |
+| `{typography.nav-link}` | 13px | 600 | 1.4 | -0.01em | Global nav menu items |
 
 ### Principles
 
-- **Negative letter-spacing at display sizes.** Every headline at 17px and up carries a slight tracking tighten (`-0.12 → -0.374px`). This produces the iconic "Apple tight" headline cadence. Never used at 12px or below.
-- **Body copy at 17px, not 16px.** Apple breaks the SaaS convention and runs paragraph text at 17px. The extra pixel gives the page an unmistakable "reading, not scanning" pace.
-- **Weight 300 is real and rare.** Used deliberately on a handful of large-size reads (`{typography.button-large}` at 18px/300 and `{typography.lead-airy}` at 24px/300). It's not an accident — it's a light-atmosphere cue reserved for moments where the content should feel airy.
-- **Weight 600, not 700, for headlines.** Apple's headlines sit at weight 600. Weight 700 is used sparingly for `{typography.tagline}` (21px) when a touch more assertion is needed.
-- **Line-height is context-specific.** Display sizes use 1.07–1.19 (tight). Body uses 1.47. Utility link stacks in the footer/store use an unusually relaxed 2.41 (`{typography.dense-link}`). The 2.41 is not a bug — it's how the footer's dense link columns breathe.
-- **Weight 500 is deliberately absent.** The ladder is 300 / 400 / 600 / 700. Mid-weight readings always use 600.
+- **Restrained negative tracking.** Korean display tracking never goes below `-0.03em`, and body copy stops at `-0.01em`.
+- **Responsive body size.** Korean paragraphs use 17px on desktop and may step down to 16px on mobile while preserving at least 1.65 line-height.
+- **No thin Korean UI text.** Weight 300 is excluded from Korean product, navigation, button, and legal copy because thin Hangul strokes lose clarity on common mobile displays.
+- **Clear hierarchy.** Korean hero and section headings use 700; card titles, labels, navigation, and buttons use 600; body and legal copy use 400.
+- **Korean-aware leading.** Display sizes use 1.18–1.35 and body uses 1.65–1.7 so stacked Hangul rows do not collide.
+- **Weight 500 is deliberately absent.** The Korean ladder is 400 / 600 / 700.
 
 ### Note on Font Substitutes
-SF Pro is Apple's proprietary system font. When building off-system:
 
-- Use `system-ui, -apple-system, BlinkMacSystemFont` as the first stack entry — on macOS/iOS/Safari this resolves to the real SF Pro.
-- For non-Apple platforms, **Inter** (Google Fonts, variable) is the closest open-source equivalent. Inter at weight 600 with `font-feature-settings: "ss03"` approximates SF Pro's rounded "a" character.
-- Nudge `letter-spacing` down by `-0.01em` on display sizes to re-create the Apple tight feel; Inter's default tracking runs slightly wider than SF Pro.
-- For body text, tighten line-height by `0.03` (from 1.47 → 1.44) when substituting Inter — Inter's taller x-height needs less leading.
+- Prefer installed Pretendard, then Noto Sans KR, then Apple SD Gothic Neo. The final `system-ui` fallback keeps first render local and avoids layout shift from a remote font.
+- Preserve the token size and line-height when falling back. Do not tighten Korean leading to imitate SF Pro metrics.
+- Latin-only labels may resolve to SF Pro on Apple platforms, but mixed Korean/Latin sentences always inherit the Korean-first stack.
 
 ## Layout
 
@@ -435,7 +483,7 @@ Apple's whitespace is the product's pedestal. Every tile begins with at least 64
 
 ### Buttons
 
-**`button-primary`** — The signature Apple action. Background `{colors.primary}` (Action Blue #0066cc), text `{colors.on-primary}` in `{typography.body}` (SF Pro Text 17px / 400), rounded `{rounded.pill}` (full pill — capsule-shaped), padding 11px × 22px. The full-pill radius IS the brand action signal.
+**`button-primary`** — The signature action. Background `{colors.primary}` (Action Blue #0066cc), text `{colors.on-primary}` in `{typography.button-large}` (Korean-first 17px / 600), rounded `{rounded.pill}` (full pill — capsule-shaped), padding 11px × 22px. The full-pill radius IS the brand action signal.
 - Active state: `{component.button-primary-active}` — `transform: scale(0.95)` (the system-wide micro-interaction).
 - Focus state: `{component.button-primary-focus}` — 2px solid `{colors.primary-focus}` outline.
 
@@ -445,7 +493,7 @@ Apple's whitespace is the product's pedestal. Every tile begins with at least 64
 
 **`button-pearl-capsule`** — Product-card secondary button. Background `{colors.surface-pearl}` (#fafafc), text `{colors.ink-muted-80}` in `{typography.caption}` (14px), 3px solid `{colors.divider-soft}` border (functions as a soft ring rather than a visible line), rounded `{rounded.md}` (11px), padding 8px × 14px.
 
-**`button-store-hero`** — A larger primary CTA used on store hero surfaces. Same Action Blue + Paper White as `{component.button-primary}`, but with `{typography.button-large}` (18px / 300 — note the rare weight 300) and slightly more padding (14px × 28px). Used sparingly on the store landing.
+**`button-store-hero`** — A larger primary CTA used on store hero surfaces. Same Action Blue + Paper White as `{component.button-primary}`, but with `{typography.button-large}` (17px / 600) and slightly more padding (14px × 28px). Used sparingly on the store landing.
 
 **`button-icon-circular`** — Floats over photography. 44 × 44px, background `{colors.surface-chip-translucent}` at ~64% alpha, icon in `{colors.ink}`, rounded `{rounded.full}`. Used for carousel controls, close buttons, and in-image controls (product image thumbnails on the iPhone buy page).
 
@@ -489,8 +537,8 @@ Error and validation states were not surfaced in the analyzed pages.
 
 ### Do
 - Use `{colors.primary}` (Action Blue #0066cc) for every interactive element — links, pill CTAs, focus signals — and nothing else. The single accent is non-negotiable.
-- Set headlines in `{typography.hero-display}` or `{typography.display-lg}` with negative letter-spacing (`-0.28 → -0.374px`) to get the signature "Apple tight" cadence.
-- Run body copy at `{typography.body}` (17px / 400 / 1.47 / -0.374px) — not 16px. The extra pixel defines the brand's reading pace.
+- Set Korean headlines in `{typography.hero-display}` or `{typography.display-lg}` with restrained negative tracking from `-0.025em` to `-0.03em`.
+- Run desktop Korean body copy at `{typography.body}` (17px / 400 / 1.7 / -0.01em); mobile may use 16px without reducing line-height below 1.65.
 - Alternate `{component.product-tile-light}` (or parchment) and `{component.product-tile-dark}` for full-bleed section rhythm. The color change IS the divider.
 - Reserve `{rounded.pill}` for the primary blue CTA and any other element that should read as an "action" (configurator chips, search input, sticky bar CTA).
 - Apply the single product-shadow (`rgba(0, 0, 0, 0.22) 3px 5px 30px`) only to product renders resting on a surface — never on cards, buttons, or text.
@@ -503,7 +551,7 @@ Error and validation states were not surfaced in the analyzed pages.
 - Don't use gradients as decorative backgrounds; atmosphere comes from photography.
 - Don't set body copy at weight 500 — Apple's ladder is 300 / 400 / 600 / 700, with 500 deliberately absent. Body is always 400; strong inline is 600; display is 600.
 - Don't round full-bleed tiles — tiles are rectangular and edge-to-edge; the color change is the divider.
-- Don't tighten line-height below 1.47 for body copy — the editorial leading is part of the brand.
+- Don't tighten Korean body line-height below 1.65 — the added leading protects Hangul legibility.
 - Don't mix radii grammars — use `{rounded.sm}` for compact utility, `{rounded.lg}` for utility cards, `{rounded.pill}` for pills, and nothing in between (except the rare `{rounded.md}` Pearl Button).
 - Don't use `{colors.primary-on-dark}` (Sky Link Blue) on light surfaces — it's the dark-tile-only variant. Action Blue is for light surfaces.
 
@@ -548,7 +596,7 @@ The structural breakpoints that matter for agents: 1440px (content lock), 1068px
 2. Variants of an existing component (`-active`, `-focus`, `-2`, `-3`) live as separate entries in `components:`.
 3. Use `{token.refs}` everywhere — never inline hex.
 4. Never document hover. Default and Active/Pressed states only.
-5. Display headlines stay SF Pro Display 600 with negative letter-spacing. Body stays SF Pro Text 400 at 17px. The boundary is unbreakable.
+5. Korean display and body text use the Korean-first stack and the normative Korean metrics above. Latin-only source examples may retain SF Pro.
 6. The single drop-shadow (`rgba(0, 0, 0, 0.22) 3px 5px 30px`) is reserved for product photography only.
 7. When in doubt about emphasis: alternate surface (light → dark tile) before adding chrome.
 
