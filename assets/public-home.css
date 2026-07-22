@@ -35,9 +35,9 @@ body {
   font-size: 17px;
   font-weight: 400;
   line-height: 1.7;
-  letter-spacing: -.01em;
+  letter-spacing: 0;
   word-break: keep-all;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   font-variant-numeric: tabular-nums;
 }
 
@@ -93,7 +93,7 @@ a:focus-visible {
   min-height: 44px;
   font-size: 15px;
   font-weight: 600;
-  letter-spacing: -.015em;
+  letter-spacing: 0;
   text-decoration: none;
   white-space: nowrap;
 }
@@ -123,7 +123,7 @@ a:focus-visible {
 }
 
 .nav .nav-cta {
-  min-height: 34px;
+  min-height: 44px;
   margin-left: 8px;
   border-radius: 9999px;
   padding: 0 16px;
@@ -173,7 +173,7 @@ h1 {
   font-size: clamp(46px, 4.1vw, 60px);
   font-weight: 700;
   line-height: 1.18;
-  letter-spacing: -.03em;
+  letter-spacing: 0;
 }
 
 .hero-lead {
@@ -182,7 +182,7 @@ h1 {
   color: var(--muted);
   font-size: 20px;
   line-height: 1.65;
-  letter-spacing: -.01em;
+  letter-spacing: 0;
 }
 
 .hero-actions {
@@ -202,7 +202,7 @@ h1 {
   font-size: 16px;
   font-weight: 600;
   line-height: 1.4;
-  letter-spacing: -.01em;
+  letter-spacing: 0;
   text-align: center;
   text-decoration: none;
   transition: transform 120ms ease;
@@ -293,7 +293,7 @@ h1 {
   font-size: clamp(34px, 3vw, 42px);
   font-weight: 700;
   line-height: 1.28;
-  letter-spacing: -.025em;
+  letter-spacing: 0;
 }
 
 .section-heading p,
@@ -397,7 +397,7 @@ h1 {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.35;
-  letter-spacing: -.015em;
+  letter-spacing: 0;
 }
 
 .product-card:nth-child(2) h3,
@@ -620,8 +620,12 @@ figcaption {
 }
 
 .seller-grid a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
   color: var(--primary);
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
 
 .site-footer {
@@ -718,7 +722,7 @@ figcaption {
   }
 
   .nav .nav-cta {
-    min-height: 38px;
+    min-height: 44px;
     margin-left: 0;
     padding: 0 15px;
   }
@@ -912,6 +916,61 @@ figcaption {
     min-height: 74px;
     padding-right: 14px;
     padding-left: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .site-header {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .brand {
+    gap: 7px;
+    font-size: 14px;
+  }
+
+  .nav .nav-cta {
+    min-height: 44px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  .hero-section {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  .hero-media {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-media img {
+    height: auto;
+  }
+
+  .hero-media img:nth-child(2) {
+    display: none;
+  }
+
+  .section {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .products-section .section-heading {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .seller-grid div,
+  .seller-grid .wide {
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 10px;
   }
 }
 
