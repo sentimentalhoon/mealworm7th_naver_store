@@ -59,7 +59,7 @@ Add new project documentation under `docs/`. Keep root-level files limited to na
 - Make the smallest change that solves the current task.
 - Do not refactor unrelated HTML, CSS, scripts, or generated assets.
 - Preserve the existing static-site structure unless there is a clear reason to change it.
-- Treat `exports/` as generated output and do not commit it.
+- Treat `exports/` as generated output. Do not commit image-export folders; only the three option artifacts explicitly allowlisted in `.gitignore` are tracked.
 - Use existing npm scripts before adding new tooling:
   - `npm run build`
   - `npm run export:images`

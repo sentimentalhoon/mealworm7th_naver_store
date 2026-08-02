@@ -1,14 +1,15 @@
-밀웜 상세페이지 HTML 세트 v23
+밀웜 상세페이지 HTML 세트 v24
 
 공개 사이트 역할
 - mealworm7th.com의 index.html은 검색 유입용 밀웜7번가 공식 브랜드 허브입니다.
-- 공개 홈은 840px 단일 모바일형 화면을 기준으로 제작하며, 데스크톱에서도 같은 화면을 중앙 정렬해 보여줍니다.
+- 공개 홈은 데스크톱의 넓은 화면과 모바일의 1열 화면에 대응하는 반응형 레이아웃입니다.
 - 모든 화면 하단에는 네이버 스마트스토어로 이동하는 sticky 구매 버튼을 유지합니다.
 - 루트 화면은 생밀웜, 슈퍼밀웜, 건조밀웜, 건조슈퍼밀웜 상품 안내와 네이버 스마트스토어 구매 경로를 제공합니다.
 - 실제 주문과 결제는 네이버 스마트스토어에서 진행합니다.
 - 스마트스토어 대표 URL은 https://smartstore.naver.com/mealworm7th 입니다.
-- html/ 폴더의 상세페이지는 네이버 스마트스토어 업로드 원본입니다. 공개 검색 노출은 홈으로 집중하기 위해 noindex,nofollow 메타를 포함합니다.
-- robots.txt는 /html/ 수집을 제외하고, sitemap.xml은 우선 https://mealworm7th.com/ 홈만 포함합니다.
+- html/ 폴더의 상품 상세페이지는 네이버 스마트스토어 업로드 원본입니다. 공개 검색 노출은 홈으로 집중하기 위해 noindex,nofollow 메타를 포함합니다.
+- robots.txt는 검색엔진이 상세페이지의 noindex 메타를 읽을 수 있도록 수집을 허용하고, sitemap.xml은 https://mealworm7th.com/ 홈만 포함합니다.
+- 내부 옵션 설정 매뉴얼과 전용 도식은 공개 빌드에서 제외합니다.
 
 핵심 변경사항
 1. 네이버 스마트스토어 상세페이지용으로 840px / 640px / 400px 폭 프리셋 적용
@@ -135,6 +136,13 @@ v23 변경사항
 - 건조 상품은 22,000원을 기준으로 건조밀웜/건조슈퍼밀웜 0.5kg/1kg을 한 상품에 묶는 안을 추가했습니다.
 - 상품 구성안 확인용 엑셀 exports/options/mealworm7th_product_option_plan.xlsx 파일을 생성합니다.
 
+v24 변경사항
+- 건조 상품 상세페이지에서 아이스팩과 핫팩 등 생물 상품 전용 배송 문구를 제거했습니다.
+- 겨울철 핫팩 안내를 기온 상황에 따라 동봉할 수 있다는 정책으로 통일했습니다.
+- 내부 옵션 설정 매뉴얼과 전용 도식을 공개 빌드에서 제외했습니다.
+- 공개 홈페이지의 사업장 주소는 전라남도 담양군까지만 표시합니다.
+- 공개 홈, robots.txt, 추적하는 옵션 산출물에 대한 설명을 실제 동작과 일치시켰습니다.
+
 스마트스토어 옵션 엑셀 생성 방법
 1. 옵션 엑셀 초안 생성
    npm run export:options
@@ -212,7 +220,7 @@ v23 변경사항
    manifest.json은 생성 결과 확인용 파일이며 업로드하지 않아도 됩니다.
 
 주의
-- exports/ 폴더의 이미지 산출물은 Git에 포함하지 않습니다. 단, 스마트스토어 옵션 업로드용 exports/options/mealworm7th_smartstore_options.xlsx 파일은 Git에 포함합니다.
+- exports/ 폴더의 상세페이지 이미지 산출물은 Git에 포함하지 않습니다. 옵션 업로드 XLSX, 상품 구성안 XLSX, 가격표 PNG 등 .gitignore에서 명시적으로 허용한 3개 옵션 산출물만 Git에 포함합니다.
 - 상세 이미지를 외부 URL로 호스팅해서 HTML에 넣는 경우, 네이버 모바일 미리보기 캐시 때문에 수정 때마다 이미지 파일명 또는 URL을 바꾸는 것이 안전합니다.
 
 Cloudflare Pages 배포 설정
@@ -227,5 +235,5 @@ Cloudflare Workers Builds 배포 설정
 
 참고
 - Deploy command가 필수라면 Workers Builds 프로젝트입니다.
-- wrangler.toml에서 정적 자산 경로를 dist/로 지정했으므로 npx wrangler deploy가 dist 안의 index.html, html/, assets/만 배포합니다.
+- wrangler.toml에서 정적 자산 경로를 dist/로 지정했으므로 npx wrangler deploy가 dist 안의 공개 홈, 상품 상세페이지 6개, 공개용 assets/만 배포합니다. 내부 옵션 설정 매뉴얼과 전용 도식은 포함하지 않습니다.
 - Pages로 새 프로젝트를 만들 경우에는 Deploy command를 비우고 Build output directory를 dist로 설정하세요.

@@ -27,8 +27,9 @@ Each indexable page should include at least one meaningful value beyond a Smarts
 - The homepage should link to product information first, then provide a Smartstore purchase path.
 - If a temporary redirect is ever needed for operations, document the reason and expected removal date.
 - `index.html` is the public search landing page for `https://mealworm7th.com/`.
-- The public homepage uses one 840px mobile-first layout on both mobile and desktop, with a sticky Smartstore purchase button.
+- The public homepage uses a responsive wide layout on desktop and a single-column layout on mobile, with a sticky Smartstore purchase button.
 - Existing `html/*` files are Smartstore upload sources and should keep `noindex,nofollow`.
+- The internal option setup manual (`html/06_naver_option_manual.html`) and its diagrams are excluded from the public build.
 - `sitemap.xml` lists only the homepage until public product pages are intentionally created.
 - Track remaining SEO hardening work in `docs/seo-todo.md`.
 
